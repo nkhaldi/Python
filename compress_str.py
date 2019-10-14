@@ -4,15 +4,16 @@
 # и количество его повторений в этой позиции строки.
 
 # Пример:
-# 'aaaabbсaa' -> '4a2bс2a'
+# encode('aaaabbсdd') -> '4a2bс2d'
+# decode('4a2bс2d') -> 'aaaabbcdd'
 
-def encode(st):
+def encode(inp):
 	x = 1
 	cnt = 1
 	lst = list()
-	curr = st[x:x+1]
+	curr = inp[x:x+1]
 
-	for ch in st:
+	for ch in inp:
 		if ch in curr:
 			cnt += 1
 		else:
@@ -22,5 +23,5 @@ def encode(st):
 				lst += [str(cnt) + str(ch)]
 			cnt = 1
 		x += 1
-		curr = st[x:x+1]
+		curr = inp[x:x+1]
 	res = ''.join(lst)

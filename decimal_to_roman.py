@@ -10,13 +10,15 @@
 # M = 1000
 #
 # Будем использовать вариант, в котором числа
-# 4, 9, 40, 90, 400 и 900 записываются как вычитание из большего числа меньшего:
+# 4, 9, 40, 90, 400 и 900 записываются как вычитание
+# из большего числа меньшего:
 # IV, IX, XL, XC, CD и CM, соответственно.
 #
 # Формат ввода:
 # Строка, содержащая натуральное число n, 0 < n < 40000.
 # Формат вывода:
-# Строка, содержащая число, закодированное в римской системе счисления.
+# Строка, содержащая число, закодированное
+# в римской системе счисления.
 
 def get_num(inp, pos):
 	num = int(inp)
@@ -36,7 +38,9 @@ def get_num(inp, pos):
 	elif num == 9:
 		return nine
 
-def arabic_to_roman(inp):
+def decimal_to_roman(inp):
+	if int(inp) > 9999:
+		return 'The number is too big'
 	lst = list()
 
 	for i in range(len(inp)):
@@ -44,4 +48,4 @@ def arabic_to_roman(inp):
 	return ''.join(lst)
 
 inp = input()
-print(arabic_to_roman(inp))
+print(decimal_to_roman(inp))
