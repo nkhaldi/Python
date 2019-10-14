@@ -14,48 +14,34 @@
 # IV, IX, XL, XC, CD и CM, соответственно.
 #
 # Формат ввода:
-# Строка, содержащая натуральное число 𝑛, 0 < n < 40000.
+# Строка, содержащая натуральное число n, 0 < n < 40000.
 # Формат вывода:
 # Строка, содержащая число, закодированное в римской системе счисления.
 
-def get1(n):
-    return 'M' * n
+def get_num(inp, pos):
+	num = int(inp)
+	dic = {
+		0 : ('M', '?','?', '?'),
+		1 : ('C', 'CD','D', 'CM'),
+		2 : ('X', 'XL','L', 'XC'),
+		3 : ('I', 'IV','V', 'IX')
+	}
+	one, four, five, nine = dic[pos]
+	if num < 4:
+		return one * num
+	elif num == 4:
+		return four
+	elif 4 < num < 9:
+		return five + (one * (num - 5))
+	elif num == 9:
+		return nine
 
-def get2(n):
-    if n < 4:
-        return 'C' * n 
-    elif n == 4:
-        return 'CD'
-    elif 4 < n < 9:
-        return 'D' + ('C' * (n - 5))
-    elif n == 9:
-        return 'CM'
+def arabic_to_roman(inp):
+	lst = list()
 
-def get3(n):
-    if n < 4:
-        return 'X' * n 
-    elif n == 4:
-        return 'XL'
-    elif 4 < n < 9:
-        return 'L' + ('X' * (n - 5))
-    elif n == 9:
-        return 'XC'
+	for i in range(len(inp)):
+		lst.append(get_num(inp[i], i))
+	return ''.join(lst)
 
-def get4(n):
-    if n < 4:
-        return 'I' * n 
-    elif n == 4:
-        return 'IV'
-    elif 4 < n < 9:
-        return 'V' + ('I' * (n - 5))
-    elif n == 9:
-        return 'IX'
-
-n = int(input())
-ln = []
-lst = []
-
-ln = [n // 1000, n % 1000 // 100, n % 100 // 10, n % 10]
-lst = [get1(ln[0]), get2(ln[1]), get3(ln[2]), get4(ln[3])]
-
-print(''.join(lst))
+inp = input()
+print(arabic_to_roman(inp))
