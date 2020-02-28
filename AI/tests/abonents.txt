@@ -1,0 +1,7 @@
+Ivanov, I I, 123456789
+Ivanov, P P, 213465879
+Petrov, P P, 987654321
+Petrov, I I, 896745231
+Semenov, S S, 456789123
+Meliksetyan, N K, 9055988079
+Meliksetyan, K V, 9206333098
