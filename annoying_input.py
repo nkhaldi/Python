@@ -10,15 +10,15 @@
 # Каждое выводимое сообщение должно находиться на отдельной строке.
 
 def get_int(start_message, error_message, end_message):
-	print(start_message)
-	while True:
-		try:
-			inp = int(input())
-			break
-		except ValueError:
-			print(error_message)
-	print(end_message)
-	return inp
+    print(start_message)
+    while True:
+        try:
+            inp = int(input())
+            break
+        except ValueError:
+            print(error_message)
+    print(end_message)
+    return inp
 
 inp = get_int('Input int number:', 'Wrong value. Input int number:', 'Thank you.')
 print("\ninp\t= " + str(inp))
