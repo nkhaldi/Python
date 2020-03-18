@@ -6,12 +6,14 @@
 # Используются символы из интервала 1F600—1F64F
 # таблицы символов Юникода. Используется кодировка UTF-8.
 
+
 def caesar(s, n):
     res = ""
     alphabet = " abcdefghijklmnopqrstuvwxyz"
     for e in s:
         res += alphabet[(alphabet.index(e) + n) % len(alphabet)]
     return res
+
 
 def uni_caesar(s, n):
     res = ""

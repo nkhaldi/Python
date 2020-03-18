@@ -1,6 +1,5 @@
-#!/usr/bin/env python
-
 # Программа проверяющая правильность расстановки скобок в строке
+
 
 def brackets(brac):
     stack = []
@@ -17,7 +16,8 @@ def brackets(brac):
 
     return len(stack) == 0
 
+
 if brackets(input()):
-	print("Success")
+    print("Success")
 else:
-	print ("Fail")
+    print("Fail")

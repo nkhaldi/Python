@@ -17,28 +17,30 @@
 # Дробное число в научном формате (экспоненциальном),
 # с точностью ровно два знака после запятой.
 
+
 def translate(num, unit_from, unit_to):
     dict_to_m = {
-        'mile'    : 1609,
-        'yard'    : 0.9144,
-        'foot'    : 0.3048,
-        'inch'    : 0.0254,
-        'km'    : 1000,
-        'm'        : 1,
-        'cm'    : 0.01,
-        'mm'    : 0.001
+        'mile': 1609,
+        'yard': 0.9144,
+        'foot': 0.3048,
+        'inch': 0.0254,
+        'km': 1000,
+        'm': 1,
+        'cm': 0.01,
+        'mm': 0.001
     }
     dict_from_m = {
-        'mile'    : 1 / 1609,
-        'yard'    : 1 / 0.9144,
-        'foot'    : 1 / 0.3048,
-        'inch'    : 1 / 0.0254,
-        'km'    : 1 / 1000,
-        'm'        : 1 / 1,
-        'cm'    : 1 / 0.01,
-        'mm'    : 1 / 0.001
+        'mile': 1 / 1609,
+        'yard': 1 / 0.9144,
+        'foot': 1 / 0.3048,
+        'inch': 1 / 0.0254,
+        'km': 1 / 1000,
+        'm': 1 / 1,
+        'cm': 1 / 0.01,
+        'mm': 1 / 0.001
     }
     return num * dict_to_m[unit_from] * dict_from_m[unit_to]
+
 
 num, unit_from, unit_in, unit_to = input().split(' ')
 res = translate(float(num), unit_from, unit_to)

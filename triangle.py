@@ -6,11 +6,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 class Point():
     def __init__(self, x_, y_):
         self.x = x_
         self.y = y_
         print("Point", self.x, self.y)
+
 
 class Triangle():
     def __init__(self, p1_, p2_, p3_):
@@ -39,10 +41,11 @@ class Triangle():
         plt.plot(xarr, yarr)
         plt.show()
 
+
 p1 = Point(1, 1)
 p2 = Point(1, 4)
 p3 = Point(5, 1)
-tr = Triangle(p1, p2 , p3)
+tr = Triangle(p1, p2, p3)
 
 print(tr.perim())
 print(tr.square())

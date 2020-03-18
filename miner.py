@@ -1,5 +1,5 @@
 # Поле для игры сапёр представляет собой сетку размером nxm.
-# В ячейке сетки может находиться или отсутствовать мина. 
+# В ячейке сетки может находиться или отсутствовать мина.
 
 # Напишите программу, которая выводит "решённое" поле,
 # т.е. для каждой ячейки, не являющейся миной,
@@ -17,7 +17,8 @@
 # от 0 до 8, либо мина (обозначенная символом "*"),
 # при этом число означает количество мин в соседних ячейках поля.
 
-def count_mines(wfield, i , j):
+
+def count_mines(wfield, i, j):
     cnt = 0
     if wfield[i][j] == '*':
         return '*'
@@ -40,6 +41,7 @@ def count_mines(wfield, i , j):
             cnt += 1
         return cnt
 
+
 def solver(wfield, rows, cols):
     res = list()
     for i in range(rows):
@@ -50,10 +52,11 @@ def solver(wfield, rows, cols):
         res.append(curr)
     return res
 
+
 ifield = list()
 wfield = list()
-
 rows, cols = [int(i) for i in input().split()]
+
 for i in range(rows):
     ifield.append(input())
 
@@ -65,5 +68,5 @@ wfield.append('.' * (cols + 2))
 res = solver(wfield, rows, cols)
 for i in range(rows):
     for j in range(cols):
-        print(res[i][j], end = '')
+        print(res[i][j], end='')
     print()

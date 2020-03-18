@@ -9,6 +9,7 @@
 
 import re
 
+
 def encode_rle(inp):
     x = 1
     cnt = 1
@@ -27,6 +28,7 @@ def encode_rle(inp):
         x += 1
         curr = inp[x:x+1]
     return ''.join(lst)
+
 
 def decode_rle(inp):
     out = ""

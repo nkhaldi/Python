@@ -18,13 +18,14 @@
 # - из римской системы в десятичную
 # - из десятичной системы в римскую
 
+
 def get_num(inp, pos):
     num = int(inp)
     dic = {
-        0 : ('M', '?','?', '?'),
-        1 : ('C', 'CD','D', 'CM'),
-        2 : ('X', 'XL','L', 'XC'),
-        3 : ('I', 'IV','V', 'IX')
+        0: ('M', '?', '?', '?'),
+        1: ('C', 'CD', 'D', 'CM'),
+        2: ('X', 'XL', 'L', 'XC'),
+        3: ('I', 'IV', 'V', 'IX')
     }
     one, four, five, nine = dic[pos]
     if num < 4:
@@ -35,6 +36,7 @@ def get_num(inp, pos):
         return five + (one * (num - 5))
     elif num == 9:
         return nine
+
 
 def decimal_to_roman(inp):
     lst = list()
@@ -49,6 +51,7 @@ def decimal_to_roman(inp):
     for i in range(len(inp)):
         lst.append(get_num(inp[i], i))
     return ''.join(lst)
+
 
 def roman_to_decimal(inp):
     dic = {
