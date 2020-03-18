@@ -10,13 +10,12 @@
 
 import os
 
-lst = list()
-
+dirs = list()
 for current_dir, dirs, files in os.walk('main'):
     if list(filter(lambda x: x.endswith('.py'), files)):
-        lst.append('{}\n'.format(current_dir))
+        dirs.append('{}\n'.format(current_dir))
 
-lst.sort()
-with open('result.txt', 'w') as f:
-    for dr in lst:
-        f.write(dr)
+dirs.sort()
+with open('result.txt', 'w') as fd:
+    for dr in dirs:
+        fd.write(dr)
