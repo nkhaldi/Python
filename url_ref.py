@@ -19,11 +19,11 @@ import requests
 
 
 def find_ref(link1, link2):
-    link_pattern = re.compile(r'<a[^>]*?href="(.*?)"[^>]*?>')
+    pattern = re.compile(r'<a[^>]*?href="(.*?)"[^>]*?>')
     resp = requests.get(link1).text
-    for url in link_pattern.findall(resp):
-        cur_resp = requests.get(url).text
-        if link2 in link_pattern.findall(cur_resp):
+    for url in pattern.findall(resp):
+        curr = requests.get(url).text
+        if link2 in pattern.findall(curr):
             return True
     return False
 
