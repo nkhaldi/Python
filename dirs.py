@@ -11,9 +11,9 @@
 import os
 
 dirs = list()
-for current_dir, dirs, files in os.walk('main'):
+for curr, dirs, files in os.walk('main'):
     if list(filter(lambda x: x.endswith('.py'), files)):
-        dirs.append('{}\n'.format(current_dir))
+        dirs.append('{}\n'.format(curr))
 
 dirs.sort()
 with open('result.txt', 'w') as fd:
