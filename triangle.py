@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class Point():
+class Point:
     def __init__(self, x_, y_):
         self.x = x_
         self.y = y_
         print("Point", self.x, self.y)
 
 
-class Triangle():
+class Triangle:
     def __init__(self, p1_, p2_, p3_):
         self.p1 = p1_
         self.p2 = p2_

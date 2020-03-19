@@ -10,11 +10,16 @@
 
 import os
 
-res = list()
-for curr, dirs, files in os.walk("tests/main/"):
-    if list(filter(lambda x: x.endswith(".py"), files)):
-        res.append("{}".format(curr))
 
-res.sort()
-for dr in res:
+def find_dirs(fname):
+    res = list()
+    for curr, dirs, files in os.walk(fname):
+        if list(filter(lambda x: x.endswith(".py"), files)):
+            res.append("{}".format(curr))
+    res.sort()
+    return res
+
+
+dirs = find_dirs("tests/main")
+for dr in dirs:
     print(dr)

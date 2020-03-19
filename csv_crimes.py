@@ -12,16 +12,21 @@
 
 import csv
 
-crimes = dict()
-with open("tests/Crimes.csv") as fd:
-    reader = csv.reader(fd)
-    for row in reader:
-        crime_type = row[5]
-        if crime_type in crimes:
-            crimes[crime_type] += 1
-        else:
-            crimes[crime_type] = 1
 
+def find_max_crime(fname):
+    crimes = dict()
+    with open(fname) as fd:
+        reader = csv.reader(fd)
+        for row in reader:
+            crime_type = row[5]
+            if crime_type in crimes:
+                crimes[crime_type] += 1
+            else:
+                crimes[crime_type] = 1
+    return crimes
+
+
+crimes = find_max_crime("tests/Crimes.csv")
 for key in crimes:
     print(key, "->", crimes[key])
 print("\nMax is", max(crimes, key=crimes.get))
