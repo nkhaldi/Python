@@ -23,5 +23,5 @@ def get_int(start_message, error_message, end_message):
 
 
 inp = get_int('Input int number:', 'Wrong value. Input integer:', 'Thank you.')
-print("\ninp\t= " + str(inp))
-print("type\t= " + str(type(inp)))
+print("inp = ", inp)
+print("type = ", type(inp))
