@@ -15,16 +15,16 @@
 import requests
 
 proxies = {
-    'http': 'socks5://127.0.0.1:9050',
-    'https': 'socks5://127.0.0.1:9050'
+    "http": "socks5://127.0.0.1:9050",
+    "https": "socks5://127.0.0.1:9050"
 }
 
-with open('dataset_24476_3.txt') as fd:
+with open("tests/numbers_api.txt") as fd:
     for number in fd:
-        url = f'http://numbersapi.com/{number.strip()}/math?json=true'
+        url = f"http://numbersapi.com/{number.strip()}/math?json=true"
         res = requests.get(url, proxies=proxies)
         res = res.json()
-        if res['found']:
-            print('Interesting')
+        if res["found"]:
+            print("Interesting")
         else:
-            print('Boring')
+            print("Boring")
