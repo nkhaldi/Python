@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Поиск в глубину
 # Depth-First Search
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Скрипт для сохранения изображений по url
 
 import requests

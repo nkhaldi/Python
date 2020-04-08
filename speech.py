@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Программа для распознавания речи
 
 import speech_recognition as sr
