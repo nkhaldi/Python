@@ -17,8 +17,10 @@ html = str(urlopen(url).read().decode('utf-8'))
 regex = r'<code>(.*?)</code>'
 lst = sorted(findall(regex, html))
 
+ans = list()
 count = Counter(lst)
 max_cnt = max(count.values())
 for key in count:
     if count[key] == max_cnt:
-        print(key)
+        ans.append(key)
+print(' '.join(ans))
