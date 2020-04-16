@@ -2,9 +2,7 @@
 
 # Найти все гиперссылки на текущей странице
 
-from re import findall
 from bs4 import BeautifulSoup
-from collections import Counter
 from urllib.request import urlopen
 
 url = "https://ru.wikipedia.org/wiki/Python"
