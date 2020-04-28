@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # testClasses.py
 # --------------
 # Licensing Information:  You are free to use or extend these projects for
