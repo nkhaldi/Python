@@ -13,7 +13,7 @@ while True:
     try:
         inp = input()
         macs.append(inp)
-    except:
+    except Exception as ex:
         break
 
 for mac in macs:

@@ -12,5 +12,5 @@ with sr.Microphone() as source:
     try:
         output = r.recognize_google(audio)
         print("You said: {}".format(ottput))
-    except:
+    except Exception as ex:
         print("I don't understand :c")
