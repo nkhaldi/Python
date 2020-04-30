@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Структура данных граф и взвешенный граф
 # Graph & Weight Graph
 

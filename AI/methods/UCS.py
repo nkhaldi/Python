@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Взвеенный поиск
 # Uniform Cost Search
 
