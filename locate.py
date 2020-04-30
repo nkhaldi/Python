@@ -5,6 +5,7 @@
 # ifconfig | grep -E '(\w\w:){5}\w\w' | awk -F ' ' '{print $2}'
 # arp -a | grep -E '(\w\w:){5}\w\w' | awk -F ' ' '{print $4}'
 
+
 import json
 from http.client import responses
 from urllib.request import urlopen

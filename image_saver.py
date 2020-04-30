@@ -2,6 +2,7 @@
 
 # Скрипт для сохранения изображений по url
 
+
 import requests
 
 img_url = input()

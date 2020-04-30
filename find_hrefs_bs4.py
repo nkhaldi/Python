@@ -2,6 +2,7 @@
 
 # Найти все гиперссылки на текущей странице
 
+
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 

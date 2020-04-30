@@ -18,9 +18,6 @@
 # и возвращает True, если элемент допущен, и False иначе.
 
 
-a = [i for i in range(31)]
-
-
 def mul2(x):
     return x % 2 == 0
 
@@ -34,16 +31,6 @@ def mul5(x):
 
 
 class multifilter:
-
-    def judge_half(pos, neg):
-        return pos >= neg
-
-    def judge_any(pos, neg):
-        return pos >= 1
-
-    def judge_all(pos, neg):
-        return neg == 0
-
     def __init__(self, iterable, *funcs, judge=judge_any):
         self.iterable = iterable
         self.funcs = funcs
@@ -60,3 +47,12 @@ class multifilter:
                     neg += 1
             if self.judge(pos, neg):
                 yield element
+
+    def judge_half(pos, neg):
+        return pos >= neg
+
+    def judge_any(pos, neg):
+        return pos >= 1
+
+    def judge_all(pos, neg):
+        return neg == 0

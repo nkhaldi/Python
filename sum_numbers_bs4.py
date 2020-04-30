@@ -5,6 +5,7 @@
 # в качестве ответа одно число - эту сумму.
 # Для доступа к ячейкам используйте возможности BeautifulSoup.
 
+
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
