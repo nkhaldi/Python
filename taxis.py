@@ -25,5 +25,5 @@ for gr in groups:
     if not put:
         taxis += [gr]
 
+print(len(taxis), 'cars')
 print(taxis)
-print(len(taxis))
