@@ -9,7 +9,7 @@ import telebot
 from random import randrange
 
 
-token = '1628321398:AAHkPSqZMFxxyHOtDnEyQ7bLRYVG7PY96xc'
+token = ''
 bot = telebot.TeleBot(token)
 
 
