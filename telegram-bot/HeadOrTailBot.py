@@ -9,7 +9,8 @@ import telebot
 from random import randrange
 
 
-token = ''
+token_file = open('/home/narek/.pass/.head_or_tail.token')
+token = token_file.read().rstrip('\n')
 bot = telebot.TeleBot(token)
 
 
