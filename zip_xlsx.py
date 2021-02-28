@@ -21,11 +21,11 @@ import zipfile
 
 payroll = {}
 zipdir = 'tests/xlsx_files'
-zipname = 'rogaikopyta.zip'
+zipname = 'tests/rogaikopyta.zip'
 url = 'https://stepik.org/media/attachments/lesson/245299/' + zipname
 
-if not os.access(zipname, os.F_OK):
-    wget.download(url)
+#if not os.access(zipname, os.F_OK):
+#    wget.download(url)
 if zipdir not in os.listdir():
     zipfile = zipfile.ZipFile(zipname)
     zipfile.extractall(zipdir)
