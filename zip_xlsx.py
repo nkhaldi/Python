@@ -27,7 +27,7 @@ if zipdir not in os.listdir():
     zipfile = zipfile.ZipFile(zipname)
     zipfile.extractall(zipdir)
     zipfile.close()
-path = os.getcwd() + "/" + zipdir + "/"
+path = f"{os.getcwd()}/{zipdir}/"
 
 for zfile in os.listdir(zipdir):
     wb = xlrd.open_workbook(path + zfile)
