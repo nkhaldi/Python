@@ -13,6 +13,7 @@ import os
 import wget
 import xml.etree.ElementTree as ET
 
+
 osmfile = 'tests/map1.osm'
 url = 'https://stepik.org/media/attachments/lesson/245678/map1.osm'
 

@@ -6,6 +6,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+
 url = "https://ru.wikipedia.org/wiki/Python"
 html = str(urlopen(url).read().decode('utf-8'))
 soup = BeautifulSoup(html, 'html.parser')

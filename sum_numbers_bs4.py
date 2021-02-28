@@ -9,6 +9,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+
 url = "https://stepik.org/media/attachments/lesson/209723/5.html"
 html = str(urlopen(url).read().decode('utf-8'))
 soup = BeautifulSoup(html, 'html.parser')
