@@ -6,28 +6,39 @@
 # закрученной по часовой стрелке, как показано в примере
 
 
-def spiral(n):
-    dx, dy = 1, 0
-    x, y = 0, 0
-    myarray = [[None] * n for j in range(n)]
-    for i in range(1, n * n + 1):
-        myarray[x][y] = i
-        nx, ny = x + dx, y + dy
-        if 0 <= nx < n and 0 <= ny < n and myarray[nx][ny] == 0:
-            x, y = nx, ny
-        else:
-            dx, dy = -dy, dx
-            x, y = x + dx, y + dy
-    return myarray
+n, m = [int(i) for i in input().split()]
+matrix = [[0] * m for _ in range(n)]
+cnt = 1
+ix, jx, ic, jc = 0, 0, 0, 0
 
+for k in range(n * m):
+    if cnt == n * m + 1:
+        break
+    dr = k % 4
+    if dr == 0:
+        for j in range(jx, m - jx):
+            matrix[ic][j] = cnt
+            cnt += 1
+        jc = j
+        ix += 1
+    elif dr == 1:
+        for i in range(ix, n - ix + 1):
+            matrix[i][jc] = cnt
+            cnt += 1
+        ic = i
+        jx += 1
+    elif dr == 2:
+        for j in range(jc - 1, jx - 2, -1):
+            matrix[ic][j] = cnt
+            cnt += 1
+        jc = j
+    elif dr == 3:
+        for i in range(ic - 1, ix - 1, -1):
+            matrix[i][jc] = cnt
+            cnt += 1
+        ic = i
 
-def printspiral(myarray):
-    n = range(len(myarray))
-    for y in n:
-        for x in n:
-            print(myarray[x][y], end=' ')
-        print()
-
-
-n = int(input())
-printspiral(spiral(n))
+for i in range(n):
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end='')
+    print()
