@@ -20,6 +20,7 @@
 # где используются байты состоящие только из 7 бит.
 
 
+print("Enter number to encode:")
 n = bin(int(input()))[2:]
 add = '0' * (28 - len(n))
 bits = add + n
