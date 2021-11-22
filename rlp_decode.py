@@ -84,7 +84,6 @@ def rlpDecodeArray(hexStr: str):
 
 
 def rlpDecodeArrayElement(hexStr: str):
-    result = str()
     size = 0
     bsize = int(hexStr[:2], 16)
     if 0 <= bsize <= 127:
