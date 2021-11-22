@@ -39,102 +39,72 @@ with open('tests/rlp_output1.txt', 'w') as out_fd:
 
 # Решение без библиотки rlp
 def rlpDecode(hexStr: str):
-    bits = hexStr[:2]
-    if 0 <= int(bits, 16) <= 191:
+    if 0 <= int(hexStr[:2], 16) <= 191:
         return rlpDecodeString(hexStr)
     else:
         return rlpDecodeArray(hexStr)
 
 
 def rlpDecodeString(hexStr: str):
-    result = str()
-    bits = hexStr[:2]
-    result += bits
-    if 128 <= int(bits, 16) <= 183:
+    result = hexStr[:2]
+    bsize = int(hexStr[:2], 16)
+    if 128 <= bsize <= 183:
         for i in range(len(hexStr)-2, 1, -2):
             result += hexStr[i] + hexStr[i+1]
-    elif 184 <= int(bits, 16) <= 191:
-        size = int(bits, 16) - 183
-        for i in range(1, int(bits, 16) - 183 + 1):
-            bits = hexStr[2*i:2*i+2]
-            result += bits
-        for i in range(len(hexStr) - 2, 1+size*2, -2):
+    elif 184 <= bsize <= 191:
+        bsize -= 183
+        for i in range(1, bsize + 1):
+            result += hexStr[2*i:2*i+2]
+        for i in range(len(hexStr)-2, 2*bsize+1, -2):
             result += hexStr[i] + hexStr[i+1]
     return result
 
 
 def rlpDecodeArray(hexStr: str):
-    result = str()
     elements = list()
-    bits = hexStr[:2]
-    result += bits
-    if 192 <= int(bits, 16) <= 247:
+    result = hexStr[:2]
+    bsize = int(hexStr[:2], 16)
+    if 192 <= bsize <= 247:
         i = 2
         while i < len(hexStr):
-            bits = hexStr[i:i+2]
-            if 0 <= int(bits, 16) <= 191:
-                el, isize = rlpDecodeStringFromArray(hexStr[i:])
-                elements.append(el)
-                i += isize
-            elif int(bits, 16) <= 255:
-                el, isize = rlpDecodeArrayFromArray(hexStr[i:])
-                elements.append(el)
-                i += isize
-    elif int(bits, 16) <= 255:
-        bsize = int(bits, 16) - 247
-        for i in range(1, int(bits, 16) - 247 + 1):
-            bits = hexStr[2*i:2*i+2]
-            result += bits
-        i = bsize*2 + 2
+            el, isize = rlpDecodeArrayElement(hexStr[i:])
+            elements.append(el)
+            i += isize
+    elif bsize <= 255:
+        bsize -= 247
+        for i in range(1, bsize+1):
+            result += hexStr[2*i:2*i+2]
+        i = 2*bsize + 2
         while i < len(hexStr):
-            bits = hexStr[i:i+2]
-            if 0 <= int(bits, 16) <= 191:
-                el, isize = rlpDecodeStringFromArray(hexStr[i:])
-                elements.append(el)
-                i += isize
-            elif int(bits, 16) <= 255:
-                el, isize = rlpDecodeArrayFromArray(hexStr[i:])
-                elements.append(el)
-                i += isize
+            el, isize = rlpDecodeArrayElement(hexStr[i:])
+            elements.append(el)
+            i += isize
     result += ''.join(elements[::-1])
     return result
 
 
-def rlpDecodeStringFromArray(hexStr: str):
+def rlpDecodeArrayElement(hexStr: str):
     result = str()
     size = 0
-    bits = hexStr[:2]
-    if 0 <= int(bits, 16) <= 127:
-        result += bits
-        size = 2
-    elif int(bits, 16) <= 183:
-        size = int(bits, 16) - 128
-        result += hexStr[:2+size*2]
-        size = 2+size*2
-    elif int(bits, 16) <= 191:
-        bsize = int(bits, 16) - 183
-        bits = hexStr[2:2*bsize+2]
-        size = int(bits, 16)
-        result += hexStr[:size*2+bsize*2+2]
-        size = size*2+bsize*2+2
-    return (result, size)
-
-
-def rlpDecodeArrayFromArray(hexStr: str):
-    result = str()
-    size = 0
-    bits = hexStr[:2]
-    if 192 <= int(bits, 16) <= 247:
-        size = int(bits, 16) - 192
-        result += hexStr[:2+size*2]
-        size = 2 + size*2
-    elif int(bits, 16) <= 255:
-        bsize = int(bits, 16) - 247
-        bits = hexStr[2:2*bsize+2]
-        size = int(bits, 16)
-        result += hexStr[:size*2+bsize*2+2]
-        size = size*2+bsize*2+2
-    return (result, size)
+    bsize = int(hexStr[:2], 16)
+    if 0 <= bsize <= 127:
+        rsize = 2
+    elif 128 <= bsize <= 183:
+        bsize -= 128
+        rsize = 2*bsize + 2
+    elif 184 <= bsize <= 191:
+        bsize -= 183
+        size = bsize
+        rsize = 4*size + 2
+        result += hexStr[:rsize]
+    elif 192 <= bsize <= 247:
+        bsize -= 192
+        rsize = 2*bsize + 2
+    elif bsize <= 255:
+        bsize -= 247
+        rsize = 4*size + 2
+    result = hexStr[:rsize]
+    return (result, rsize)
 
 
 # Main
