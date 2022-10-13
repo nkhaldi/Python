@@ -16,7 +16,8 @@ def compress(lst):
     ans = list()
     srt = sorted(lst)
 
-    for i in range(len(srt)):
+    i = 0
+    while i < len(srt):
         left = srt[i]
         if i == len(srt) - 1:
             ans.append(f"{left}")
@@ -32,5 +33,9 @@ def compress(lst):
             ans.append(f"{left}")
         else:
             ans.append(f"{left}-{right}")
+        i += 1
 
     return ','.join(ans)
+
+res = compress([1, 4, 5, 2, 3, 9, 8, 11, 0])
+print(res)
