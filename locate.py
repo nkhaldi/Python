@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 
-# Скрипт для определения координат и местоположения по MAC-адресу
-# Для определения MAC-адресов можно воспользоваться следующими командами:
-# ifconfig | grep -E '(\w\w:){5}\w\w' | awk -F ' ' '{print $2}'
-# arp -a | grep -E '(\w\w:){5}\w\w' | awk -F ' ' '{print $4}'
-
+"""
+Скрипт для определения координат и местоположения по MAC-адресу
+"""
 
 import json
 from http.client import responses

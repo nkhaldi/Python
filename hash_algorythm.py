@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Хэширование паролей
+"""
+
 password = input()
 
 hashed = hash(0)

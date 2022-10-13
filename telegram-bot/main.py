@@ -17,6 +17,7 @@ bot = telebot.TeleBot(token)
 board = keyboard(True, True)
 board.row('Toss')
 
+
 @bot.message_handler(commands=['start'])
 def start(message):
     greeting = f"<b>Hello, {message.from_user.first_name}!</b>\nLet's play!"
@@ -41,5 +42,6 @@ def mess(message):
             parse_mode='html',
             reply_markup=board
         )
+
 
 bot.polling(none_stop=True)

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-# Распознавание речи
-
+"""
+Распознавание речи
+"""
 
 import speech_recognition as sr
 

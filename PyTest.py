@@ -6,7 +6,10 @@ import pytest
 
 class TestFloatClass:
     # Is integer (parametrized)
-    @pytest.mark.parametrize("num", [-76.0, -54.32, -1, -0.5, 0, 0.5, 1, 23.45, 67.0])
+    @pytest.mark.parametrize(
+        "num",
+        [-76.0, -54.32, -1, -0.5, 0, 0.5, 1, 23.45, 67.0]
+    )
     def test_flt_one(self, num):
         try:
             assert num.is_integer()
@@ -24,7 +27,7 @@ class TestFloatClass:
             assert abs(num1 - num2) < delta
         except AssertionError:
             pass
-    
+
     # Are integer and fractional parts equal (negative)
     def test_flt_three(self):
         num = 123.456
@@ -38,10 +41,10 @@ class TestFloatClass:
 
 
 class TestDictClass:
-    # Has all numeric values 
+    # Has all numeric values
     @pytest.mark.parametrize(
         "dic",
-        [{'a': 123, 'b': 456}, {'a': 123, 'b': '123'}, {'a': '123', 'b': 'abc'}]
+        [{'a': 12, 'b': 45}, {'a': 12, 'b': '12'}, {'a': '12', 'b': 'ab'}]
     )
     def test_dic_one(self, dic):
         result = True
@@ -61,7 +64,7 @@ class TestDictClass:
             assert len(dic.keys()) > 2
         except AssertionError:
             pass
-    
+
     # Has equal values (negative)
     def test_dic_three(self):
         dic = {'a': 123, 'b': '123', 'c': 'abc'}

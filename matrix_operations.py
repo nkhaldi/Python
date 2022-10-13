@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-# Сложение матриц
+""""
+Сложение матриц
+"""
 
 n, m = [int(i) for i in input().split()]
 matrA = [[None] * m] * n
