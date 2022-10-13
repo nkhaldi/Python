@@ -37,5 +37,6 @@ def compress(lst):
 
     return ','.join(ans)
 
+
 res = compress([1, 4, 5, 2, 3, 9, 8, 11, 0])
 print(res)
