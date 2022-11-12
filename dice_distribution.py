@@ -21,7 +21,7 @@ def plotter(y, n):
     plt.xlabel(f'Value (n = {n})')
     plt.ylabel('Probability')
     plt.axis([0, xmax, 0, ymax+1])
-    plt.savefig(f'tests/dice_{n}.png')
+    plt.savefig(f'tests/dice/{n}.png')
 
 
 if __name__ == '__main__':
