@@ -7,7 +7,6 @@
 Канал: PythonToday
 """
 
-
 import pdfplumber
 from art import tprint
 from gtts import gTTS
