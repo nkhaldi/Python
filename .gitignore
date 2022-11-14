@@ -1,4 +1,2 @@
 __pycache__/
-task.py
-result.txt
-tests/dice_*
+/tests/dice/
