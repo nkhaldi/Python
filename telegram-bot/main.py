@@ -15,7 +15,7 @@ token = token_file.read().rstrip('\n')
 bot = telebot.TeleBot(token)
 
 board = keyboard(True, True)
-board.row('Toss')
+board.row('Flip')
 
 
 @bot.message_handler(commands=['start'])
@@ -32,7 +32,7 @@ def start(message):
 @bot.message_handler(content_types=['text'])
 def mess(message):
     input_message = message.text.strip().lower()
-    if input_message == 'toss':
+    if input_message == 'flip':
         rand = randrange(2)
         msg = "Head" if rand else "Tails"
 
