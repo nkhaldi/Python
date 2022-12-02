@@ -18,7 +18,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
-    greeting = f"Првиет, {message.from_user.first_name}!\nКак пододка?"
+    greeting = f"Првиет, {message.from_user.first_name}!\nКак погодка?"
     await message.reply(greeting)
 
 
