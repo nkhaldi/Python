@@ -18,7 +18,7 @@ Write a function that finds the shortest path with the given graph.
 ```python
 def find_shortest_path(graph, start, end):
 ...
- graph = {
+graph = {
     'A': ['B', 'C'],
     'B': ['C', 'D'],
     'C': ['D'],
