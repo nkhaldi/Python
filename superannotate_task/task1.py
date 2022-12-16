@@ -5,7 +5,7 @@ input_line = input("Enter line to parse: ")
 
 current, minus = 0, 1
 numbers = list()
-digits_set = list('0123456789')
+digits_set = '0123456789'
 
 for char in input_line:
     if char == '-':
