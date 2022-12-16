@@ -1,12 +1,13 @@
 # Task for Python developer for SuperAnnotate
 
 ## Task 1
-Write a Python program to calculate the sum of all positive and negative integers in a given string. 
+Write a Python program to calculate the sum of all positive and negative integers in a given string.
+<br>
 `-100#^sdfkj8902w3ir021@swf-20`
 
 ## Task 2
-You are given a sentence, and want to shift each letter by 2 in alphabet to create a secret code.
-The sentence you want to encode is 'the lazy dog jumped over the quick brown fox' and the output should be
+You are given a sentence, and want to shift each letter by 2 in alphabet to create a secret code.<br>
+The sentence you want to encode is 'the lazy dog jumped over the quick brown fox' and the output should be<br>
 `vjg ncba fqi lworgf qxgt vjg swkem dtqyp hqz`
 
 ## Task 3
