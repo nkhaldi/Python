@@ -8,7 +8,8 @@ def get_numbers_from_line(line):
 
     for char in line:
         if char == '-':
-            minus = -1
+            numbers.append(current * minus)
+            current, minus = None, -1
         elif char in digits_set:
             if current is None:
                 current = int(char)
