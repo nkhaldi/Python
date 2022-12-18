@@ -30,20 +30,21 @@ def find_shortest_path(graph, start, end):
     return []
 
 
-graph = {
-    'A': ['B', 'C'],
-    'B': ['C', 'D'],
-    'C': ['D'],
-    'D': ['C'],
-    'E': ['F'],
-    'F': ['C']
-}
+if __name__ == '__main__':
+    graph = {
+        'A': ['B', 'C'],
+        'B': ['C', 'D'],
+        'C': ['D'],
+        'D': ['C'],
+        'E': ['F'],
+        'F': ['C']
+    }
 
-start, end = 'A', 'D'
-shortest_path = find_shortest_path(graph, start, end)
-print(f"The shortest path from {start} to {end}:")
-if shortest_path:
-    print(' -> '.join(shortest_path))
-    print("Path lingth:", len(shortest_path))
-else:
-    print("None")
+    start, end = 'A', 'D'
+    shortest_path = find_shortest_path(graph, start, end)
+    print(f"The shortest path from {start} to {end}:")
+    if shortest_path:
+        print(' -> '.join(shortest_path))
+        print("Path lingth:", len(shortest_path))
+    else:
+        print("None")
