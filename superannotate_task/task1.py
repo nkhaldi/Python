@@ -2,7 +2,7 @@
 
 
 def get_numbers_from_line(line):
-    current, minus = 0, 1
+    current, minus = None, 1
     numbers = list()
     digits_set = '0123456789'
 
@@ -10,12 +10,15 @@ def get_numbers_from_line(line):
         if char == '-':
             minus = -1
         elif char in digits_set:
-            current = current * 10 + int(char)
-        elif current > 0:
+            if current is None:
+                current = int(char)
+            else:
+                current = current * 10 + int(char)
+        elif current is not None:
             numbers.append(current * minus)
-            current, minus = 0, 1
+            current, minus = None, 1
 
-    if current > 0:
+    if current is not None:
         numbers.append(current * minus)
 
     return numbers
