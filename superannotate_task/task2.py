@@ -6,7 +6,7 @@ def caesar_encpypt(line, shift):
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lower = "abcdefghijklmnopqrstuvwxyz"
 
-    for char in input_line:
+    for char in line:
         if char in upper:
             encrypted += upper[(upper.index(char) + shift) % len(upper)]
         elif char in lower:
