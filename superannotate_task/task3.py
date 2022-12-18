@@ -2,6 +2,9 @@
 
 
 def find_shortest_path(graph, start, end):
+    if start not in graph or end not in graph:
+        return []
+
     if start == end:
         return [start]
 
