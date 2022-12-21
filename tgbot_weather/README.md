@@ -1,8 +1,8 @@
 # Telegram weather bot
-### @nkhaldi_weather_bot
+
 ### https://t.me/nkhaldi_weather_bot
 
-Bot is based of tutorial from [https://github.com/lesskop](lesskop)
+Bot is based on tutorial from [https://github.com/lesskop](lesskop)
 
 Tutotial: https://habr.com/ru/post/684038/
 
