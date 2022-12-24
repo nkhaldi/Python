@@ -9,6 +9,7 @@ from location import get_coordinates
 env = Env()
 env.read_env(".env")
 
+
 class WindDirection(IntEnum):
     North = 0
     Northeast = 45
