@@ -2,8 +2,6 @@ import logging
 
 from aiogram import Bot, Dispatcher, executor, types
 
-import inline_keyboard
-import messages
 import config
 
 logging.basicConfig(level=logging.INFO)
