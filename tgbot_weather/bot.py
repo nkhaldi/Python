@@ -1,64 +1,50 @@
+import asyncio
 import logging
+from environs import Env
 
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, Dispatcher
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
-logging.basicConfig(level=logging.INFO)
+from location import register_location
+from user import register_user
+from weather import register_weather
 
-bot = Bot(token=config.BOT_API_TOKEN)
-dp = Dispatcher(bot)
-
-
-@dp.message_handler(commands=['start', 'weather'])
-async def show_weather(message: types.Message):
-    await message.answer(text=messages.weather(),
-                         reply_markup=inline_keyboard.WEATHER)
+logger = logging.getLogger(__name__)
 
 
-@dp.message_handler(commands='help')
-async def show_help_message(message: types.Message):
-    await message.answer(text=f'This bot can get the current weather from your IP address.',
-                         reply_markup=inline_keyboard.HELP)
+def register_all_handlers(dp):
+    register_user(dp)
+    register_weather(dp)
+    register_location(dp)
 
 
-@dp.message_handler(commands='wind')
-async def show_wind(message: types.Message):
-    await message.answer(text=messages.wind(), reply_markup=inline_keyboard.WIND)
-
-
-@dp.message_handler(commands='sun_time')
-async def show_sun_time(message: types.Message):
-    await message.answer(text=messages.sun_time(), reply_markup=inline_keyboard.SUN_TIME)
-
-
-@dp.callback_query_handler(text='weather')
-async def process_callback_weather(callback_query: types.CallbackQuery):
-    await bot.answer_callback_query(callback_query.id)
-    await bot.send_message(
-        callback_query.from_user.id,
-        text=messages.weather(),
-        reply_markup=inline_keyboard.WEATHER
+async def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format=u'%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s] - %(name)s - %(message)s',
     )
+    logger.info("Starting bot")
 
+    env = Env()
+    env.read_env(".env")
 
-@dp.callback_query_handler(text='wind')
-async def process_callback_wind(callback_query: types.CallbackQuery):
-    await bot.answer_callback_query(callback_query.id)
-    await bot.send_message(
-        callback_query.from_user.id,
-        text=messages.wind(),
-        reply_markup=inline_keyboard.WIND
-    )
+    bot = Bot(token=env.str("BOT_TOKEN"), parse_mode='HTML')
+    dp = Dispatcher(bot)
 
+    register_all_handlers(dp)
 
-@dp.callback_query_handler(text='sun_time')
-async def process_callback_sun_time(callback_query: types.CallbackQuery):
-    await bot.answer_callback_query(callback_query.id)
-    await bot.send_message(
-        callback_query.from_user.id,
-        text=messages.sun_time(),
-        reply_markup=inline_keyboard.SUN_TIME
-    )
+    # start
+    try:
+        await dp.start_polling()
+    finally:
+        await dp.storage.close()
+        await dp.storage.wait_closed()
+        await bot.session.close()
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        logger.error("Bot stopped!")
