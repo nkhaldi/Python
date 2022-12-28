@@ -1,90 +1,55 @@
-import requests
-from environs import Env
-from enum import IntEnum
-from datetime import datetime
+from aiogram import types, Dispatcher
+from aiogram.dispatcher.storage import FSMContext
 
-from location import get_coordinates
-
-
-env = Env()
-env.read_env(".env")
+import tgbot.handlers.weather as wt
+from tgbot.keyboards import inline
+from tgbot.states.location import Location
+from tgbot.handlers.location import get_location
 
 
-class WindDirection(IntEnum):
-    North = 0
-    Northeast = 45
-    East = 90
-    Southeast = 135
-    South = 180
-    Southwest = 225
-    West = 270
-    Northwest = 315
+# Commands
+async def cmd_temperature(message: types.Message, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_temperature(location)
+    await message.answer(msg, reply_markup=inline.TEMPERATURE)
 
 
-def get_wt_api_url(location):
-    coordinates = get_coordinates(location)
-    if not coordinates:
-        return False
-
-    api_host = env.str("WT_API_HOST")
-    api_key = env.str("WT_API_KEY")
-    lon, lat = coordinates.split(' ')
-    api_params = f"units=metric&lat={lat}&lon={lon}&appid={api_key}"
-
-    api_url = api_host + "?" + api_params
-    return api_url
+async def cmd_wind(message: types.Message, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_wind(location)
+    await message.answer(msg, reply_markup=inline.WIND)
 
 
-def get_wind_direction(degrees):
-    degrees = round(degrees / 45) * 45
-    if degrees == 360:
-        degrees = 0
-    return WindDirection(degrees).name
+async def cmd_suntime(message: types.Message, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_suntime(location)
+    await message.answer(msg, reply_markup=inline.SUNTIME)
 
 
-def get_temperature(location):
-    api_url = get_wt_api_url(location)
-    if not api_url:
-        return "Неизвестное местоположение, введите заново"
-
-    response = requests.get(api_url)
-    wt_json = response.json()
-
-    temp = wt_json["main"]["temp"]
-    feels = wt_json["main"]["feels_like"]
-
-    msg = f"Температура на данный момент составляет {temp}°C.\n"
-    msg += f"Ощущается как {feels}°C."
-    return msg
+# Callbaks
+async def call_temperature(callback: types.CallbackQuery, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_temperature(location)
+    await callback.message.answer(msg, reply_markup=inline.TEMPERATURE)
 
 
-def get_wind(location):
-    api_url = get_wt_api_url(location)
-    if not api_url:
-        return "Неизвестное местоположение, введите заново"
-
-    response = requests.get(api_url)
-    wt_json = response.json()
-
-    direction = get_wind_direction(wt_json["wind"]["deg"])
-    speed = wt_json["wind"]["speed"]
-
-    msg = f"Напрвлелие ветра - {direction}, cкорость {speed} м/с."
-    return msg
+async def call_wind(callback: types.CallbackQuery, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_wind(location)
+    await callback.message.answer(msg, reply_markup=inline.WIND)
 
 
-def get_suntime(location):
-    api_url = get_wt_api_url(location)
-    if not api_url:
-        return "Неизвестное местоположение, введите заново"
+async def call_suntime(callback: types.CallbackQuery, state: FSMContext):
+    location = await get_location(state)
+    msg = wt.get_suntime(location)
+    await callback.message.answer(msg, reply_markup=inline.SUNTIME)
 
-    response = requests.get(api_url)
-    wt_json = response.json()
 
-    sunrise_ts = datetime.fromtimestamp(wt_json["sys"]["sunrise"])
-    sunset_ts = datetime.fromtimestamp(wt_json["sys"]["sunset"])
-    sunrise = sunrise_ts.strftime("%H:%M")
-    sunset = sunset_ts.strftime("%H:%M")
+def register_weather(dp: Dispatcher):
+    dp.register_message_handler(cmd_temperature, commands=["temperature"], state=Location.location)
+    dp.register_message_handler(cmd_wind, commands=["wind"], state=Location.location)
+    dp.register_message_handler(cmd_suntime, commands=["suntime"], state=Location.location)
 
-    msg = f"Восход солнца - {sunrise}, закат солнца - {sunset}."
-    return msg
+    dp.register_callback_query_handler(call_temperature, text="temperature", state=Location.location)
+    dp.register_callback_query_handler(call_wind, text="wind", state=Location.location)
+    dp.register_callback_query_handler(call_suntime, text="suntime", state=Location.location)
