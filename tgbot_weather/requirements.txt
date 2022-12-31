@@ -1,4 +1,5 @@
 aiogram
+asyncio
 enum
 environs
 datetime

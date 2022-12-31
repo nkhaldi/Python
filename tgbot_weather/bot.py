@@ -4,7 +4,6 @@ from environs import Env
 
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from location import register_location
 from user import register_user
@@ -24,7 +23,8 @@ async def main():
     env.read_env(".env")
 
     bot = Bot(token=env.str("BOT_TOKEN"), parse_mode='HTML')
-    dp = Dispatcher(bot)
+    storage = MemoryStorage()
+    dp = Dispatcher(bot, storage=storage)
 
     register_user(dp)
     register_weather(dp)
