@@ -1,47 +1,47 @@
 from aiogram import types, Dispatcher
 from aiogram.dispatcher.storage import FSMContext
 
-import tgbot.handlers.weather as wt
-from tgbot.keyboards import inline
-from tgbot.states.location import Location
-from tgbot.handlers.location import get_location
+import inline
+import api_requests as api
+from states import Location
+from location import get_location
 
 
 # Commands
 async def cmd_temperature(message: types.Message, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_temperature(location)
+    msg = api.get_temperature(location)
     await message.answer(msg, reply_markup=inline.TEMPERATURE)
 
 
 async def cmd_wind(message: types.Message, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_wind(location)
+    msg = api.get_wind(location)
     await message.answer(msg, reply_markup=inline.WIND)
 
 
 async def cmd_suntime(message: types.Message, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_suntime(location)
+    msg = api.get_suntime(location)
     await message.answer(msg, reply_markup=inline.SUNTIME)
 
 
 # Callbaks
 async def call_temperature(callback: types.CallbackQuery, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_temperature(location)
+    msg = api.get_temperature(location)
     await callback.message.answer(msg, reply_markup=inline.TEMPERATURE)
 
 
 async def call_wind(callback: types.CallbackQuery, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_wind(location)
+    msg = api.get_wind(location)
     await callback.message.answer(msg, reply_markup=inline.WIND)
 
 
 async def call_suntime(callback: types.CallbackQuery, state: FSMContext):
     location = await get_location(state)
-    msg = wt.get_suntime(location)
+    msg = api.get_suntime(location)
     await callback.message.answer(msg, reply_markup=inline.SUNTIME)
 
 

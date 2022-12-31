@@ -13,12 +13,6 @@ from weather import register_weather
 logger = logging.getLogger(__name__)
 
 
-def register_all_handlers(dp):
-    register_user(dp)
-    register_weather(dp)
-    register_location(dp)
-
-
 async def main():
     logging.basicConfig(
         level=logging.INFO,
@@ -32,7 +26,9 @@ async def main():
     bot = Bot(token=env.str("BOT_TOKEN"), parse_mode='HTML')
     dp = Dispatcher(bot)
 
-    register_all_handlers(dp)
+    register_user(dp)
+    register_weather(dp)
+    register_location(dp)
 
     # start
     try:
