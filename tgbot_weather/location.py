@@ -6,11 +6,13 @@ from states import Location
 
 
 async def call_ask_location(callback: types.CallbackQuery):
-    await callback.message.answer('Укажите новую локацию /set_location')
+    await callback.message.answer("Укажите новую локацию /set_location")
 
 
 async def cmd_ask_location(message: types.Message):
-    await message.answer('Укажите новую локацию /set_location')
+    ask = "Локация не указана."
+    ask += "Укажите локацию после комманды /set_location"
+    await message.answer(ask)
 
 
 async def get_location(state: FSMContext):
@@ -20,7 +22,7 @@ async def get_location(state: FSMContext):
 
 
 async def set_location(message: types.Message):
-    await message.answer('Укажите новую локацию')
+    await message.answer("Укажите новую локацию")
     await Location.location.set()
 
 
@@ -31,7 +33,7 @@ async def answer_location(message: types.Message, state: FSMContext):
 
 
 def register_location(dp: Dispatcher):
-    dp.register_message_handler(set_location, commands=["set_location"], state="*")
+    dp.register_message_handler(set_location, commands=['set_location'], state="*")
     dp.register_message_handler(answer_location, content_types=types.ContentTypes.TEXT, state=Location.location)
 
     dp.register_message_handler(cmd_ask_location, content_types=types.ContentTypes.ANY)
