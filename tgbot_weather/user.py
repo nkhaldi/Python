@@ -22,4 +22,4 @@ async def user_help(message: Message):
 
 
 def register_user(dp: Dispatcher):
-    dp.register_message_handler(user_start, commands=["start"], state="*")
+    dp.register_message_handler(user_start, commands=['start'], state='*')

@@ -33,7 +33,7 @@ async def answer_location(message: types.Message, state: FSMContext):
 
 
 def register_location(dp: Dispatcher):
-    dp.register_message_handler(set_location, commands=['set_location'], state="*")
+    dp.register_message_handler(set_location, commands=['set_location'], state='*')
     dp.register_message_handler(answer_location, content_types=types.ContentTypes.TEXT, state=Location.location)
 
     dp.register_message_handler(cmd_ask_location, content_types=types.ContentTypes.ANY)
