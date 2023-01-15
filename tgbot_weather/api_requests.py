@@ -9,14 +9,14 @@ env.read_env(".env")
 
 
 class WindDirection(IntEnum):
-    North = 0
-    Northeast = 45
-    East = 90
-    Southeast = 135
-    South = 180
-    Southwest = 225
-    West = 270
-    Northwest = 315
+    северный = 0
+    северовосточный = 45
+    восточный = 90
+    юговосточный = 135
+    южный = 180
+    югозападный = 225
+    запажный = 270
+    северозападный = 315
 
 
 def get_wt_api_url(location):
@@ -37,6 +37,7 @@ def get_wind_direction(degrees):
     degrees = round(degrees / 45) * 45
     if degrees == 360:
         degrees = 0
+
     return WindDirection(degrees).name
 
 
@@ -67,7 +68,7 @@ def get_wind(location):
     direction = get_wind_direction(wt_json["wind"]["deg"])
     speed = wt_json["wind"]["speed"]
 
-    msg = f"Напрвлелие ветра - {direction}, cкорость {speed} м/с."
+    msg = f"Ветер {direction}, cкорость {speed} м/с."
     return msg
 
 
@@ -84,7 +85,7 @@ def get_suntime(location):
     sunrise = sunrise_ts.strftime("%H:%M")
     sunset = sunset_ts.strftime("%H:%M")
 
-    msg = f"Восход солнца - {sunrise}, закат солнца - {sunset}."
+    msg = f"Восход солнца в {sunrise}, закат солнца в {sunset}."
     return msg
 
 
@@ -105,4 +106,5 @@ def get_coordinates(location):
         coordinates = geobj["GeoObject"]["Point"]["pos"]
     except:
         coordinates = False
+
     return coordinates
