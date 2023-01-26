@@ -26,4 +26,3 @@ class MaxStack:
 
     def maximum(self):
         return self.maxValues[-1]
-
