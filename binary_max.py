@@ -27,6 +27,6 @@ def max_lower_or_equal(array, value):
 
 
 if __name__ == '__main__':
-    array = [0, 1, 3, 4, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
-    value = 1
+    array = [0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
+    value = 12
     print(max_lower_or_equal(array, value))
