@@ -4,7 +4,6 @@ def generate(n):
     def generate_(left, right, stack, accum):
         if not left and not right:
             result.append(accum)
-            print(accum, '\n')
             return
         if left > 0:
             generate_(left - 1, right, stack + 1, accum + '(')
@@ -16,4 +15,5 @@ def generate(n):
 
 
 if __name__ == '__main__':
-    print(generate(3))
+    n = int(input())
+    print(generate(n))
