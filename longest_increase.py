@@ -18,5 +18,5 @@ def longest_increase(arr):
 
 
 if __name__ == '__main__':
-    arr = [1, 3, 5, 4, 6, 3, 2, 7, 4]
+    arr = list(map(int, input().split()))
     print(longest_increase(arr))
