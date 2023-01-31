@@ -6,8 +6,6 @@
 Если такого элемента не существует, вернуть -1.
 """
 
-from termcolor import colored
-
 
 def max_lower_or_equal(array, value):
     if not array or array[0] > value:
@@ -16,17 +14,14 @@ def max_lower_or_equal(array, value):
     left, right = 0, len(array)
     while left + 1 < right:
         mid = (left + right) // 2
-        print(left, mid, right, ':', array[mid])
         if array[mid] <= value:
             left = mid
-            print(colored('---', 'green'))
         else:
             right = mid
-            print(colored('---', 'red'))
     return left
 
 
 if __name__ == '__main__':
-    array = [0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]
-    value = 12
+    value = int(input())
+    array = list(map(int, input().split()))
     print(max_lower_or_equal(array, value))
