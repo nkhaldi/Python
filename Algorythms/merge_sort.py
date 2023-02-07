@@ -32,3 +32,5 @@ def merge_sort(array):
     merge_sort(left)
     merge_sort(right)
     merge(array, left, right)
+
+    return array
