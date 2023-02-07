@@ -2,6 +2,7 @@ from random import randint
 from time import time
 
 from bubble_sort import bubble_sort
+from insertion_sort import insertion_sort
 
 def run_sorting(algorythm, array, reps):
     times = list()
@@ -13,10 +14,11 @@ def run_sorting(algorythm, array, reps):
     print(f"max: {max(times)}, min: {min(times)}.")
 
 
-ARRAY_LENGTH = 1000
 
 if __name__ == '__main__':
-    reps = 10
-    array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
+    REPS, LENGTH = 10, 1000
+    array = [randint(0, 1000) for i in range(LENGTH)]
     print('bubble_sort')
-    run_sorting(algorythm=bubble_sort, array=array, reps=reps)
+    run_sorting(algorythm=bubble_sort, array=array, reps=REPS)
+    print('insertion_sort')
+    run_sorting(algorythm=insertion_sort, array=array, reps=REPS)
