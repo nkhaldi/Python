@@ -1,14 +1,4 @@
-def merge_sort(array):
-    if len(array) <= 1:
-        return
-
-    point = len(array) // 2
-    left = array[:point]
-    right = array[point:]
-
-    merge_sort(left)
-    merge_sort(right)
-
+def merge(array, left, right):
     i = j = k = 0
 
     while i < len(left) and j < len(right):
@@ -29,3 +19,16 @@ def merge_sort(array):
         array[k] = right[j]
         j += 1
         k += 1
+
+
+def merge_sort(array):
+    if len(array) <= 1:
+        return
+
+    point = len(array) // 2
+    left = array[:point]
+    right = array[point:]
+
+    merge_sort(left)
+    merge_sort(right)
+    merge(array, left, right)
