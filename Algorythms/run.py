@@ -4,6 +4,7 @@ from time import time
 from bubble_sort import bubble_sort
 from insertion_sort import insertion_sort
 from merge_sort import merge_sort
+from quick_sort import quick_sort
 
 
 def run_sorting(algorythm, length, reps):
@@ -26,3 +27,5 @@ if __name__ == '__main__':
     run_sorting(algorythm=insertion_sort, length=LENGTH, reps=REPS)
     print('merge_sort')
     run_sorting(algorythm=merge_sort, length=LENGTH, reps=REPS)
+    print('quick_sort')
+    run_sorting(algorythm=quick_sort, length=LENGTH, reps=REPS)
