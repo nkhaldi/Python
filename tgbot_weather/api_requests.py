@@ -104,7 +104,8 @@ def get_coordinates(location):
     try:
         geobj = crd_json['response']['GeoObjectCollection']['featureMember'][0]
         coordinates = geobj['GeoObject']['Point']['pos']
-    except:
+    except Exception as e:
+        print(f"Error in response: {e}")
         coordinates = False
 
     return coordinates
