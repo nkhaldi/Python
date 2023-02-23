@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+"""
+Скрипт для наглядной демонстрации представления числе с плаваующей точкой
+в языке Python в памяти компьютера
+"""
+
 import struct
 from itertools import islice
 
