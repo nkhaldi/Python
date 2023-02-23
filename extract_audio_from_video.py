@@ -1,5 +1,4 @@
 import moviepy.editor
-from pathlib import Path
 
 
 try:

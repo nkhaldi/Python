@@ -96,7 +96,6 @@ def rlpDecodeArrayElement(hexStr: str):
         bsize -= 183
         size = bsize
         rsize = 4*size + 2
-        result += hexStr[:rsize]
     elif 192 <= bsize <= 247:
         bsize -= 192
         rsize = 2*bsize + 2

@@ -10,7 +10,7 @@
 def max_lower_or_equal(array, value):
     if not array or array[0] > value:
         return -1
-    i = 0
+
     left, right = 0, len(array)
     while left + 1 < right:
         mid = (left + right) // 2

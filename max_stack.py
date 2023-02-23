@@ -19,7 +19,7 @@ class MaxStack:
             self.maxValues.append(elem)
 
     def pop(self):
-        elem = self.stack.pop(elem)
+        elem = self.stack.pop()
         if elem == self.maxValues[-1]:
             self.maxValues.pop()
         return elem
