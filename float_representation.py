@@ -15,13 +15,11 @@ def float_to_bin_parts(number, bits=64):
         float_pack = 'f'
         exponent_bits = 8
         mantissa_bits = 23
-        exponent_bias = 127
     elif bits == 64:        # double precision. all python floats are this
         int_pack = 'Q'
         float_pack = 'd'
         exponent_bits = 11
         mantissa_bits = 52
-        exponent_bias = 1023
     else:
         raise ValueError('bits argument must be 32 or 64')
 
@@ -39,15 +37,14 @@ if __name__ == '__main__':
     print("Настоящий порядок в двоичном виде: " + str(bin(int(exponent, 2) - 1023)))
     print("Настоящая мантисса в двоичном виде: " + str("1." + mantissa))
 
-    exponent = int(exponent, 2)-1023-52
+    exponent = int(exponent, 2) - 1023 - 52
     print("Порядок после переноса запятой (в десятичной системе): " + str(exponent))
-    mantissa = int("1"+mantissa, 2)
+    mantissa = int("1" + mantissa, 2)
     print("Мантисса после переноса запятой (в десятичной системе): " + str(mantissa))
 
     recon_number = mantissa*(2.0**exponent)
 
     if sign == '1':
         recon_number *= -1
-
 
     print("Реконструированное число {0:.52}".format(recon_number))

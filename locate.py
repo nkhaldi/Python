@@ -14,7 +14,7 @@ while True:
     try:
         inp = input()
         macs.append(inp.upper())
-    except Exception as ex:
+    except Exception:
         break
 
 for mac in macs:
