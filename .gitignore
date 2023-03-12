@@ -3,3 +3,5 @@ __pycache__/
 
 Pipfile
 Pipfile.lock
+
+/saber/1_merge_logs/logs
