@@ -1,0 +1,100 @@
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:48:43", "message": "Dr. Zoidberg ate a fish in L.A. today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:48:44", "message": "Fry brought a rocket in L.A. today"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:48:47", "message": "Leela ate a bottle of bear near the Square Garden tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:48:55", "message": "Amy built an apple near the Square Garden tomorrow"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:48:57", "message": "Bender saw a mall near the Square Garden day after tomorrow"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:49:00", "message": "Leela ate a bottle of bear in L.A. day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:49:04", "message": "Bender killed an apple at park day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:49:11", "message": "Fry ate a mall in L.A. today"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:49:13", "message": "Leela played a man in L.A. day after tomorrow"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:49:19", "message": "Farnsworth created a boat near the Square Garden today"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:49:22", "message": "Leela took a rocket at park yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:49:30", "message": "Fry created a man at park yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:49:33", "message": "Leela created a boat in L.A. today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:49:36", "message": "Farnsworth created a car in L.A. day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:49:37", "message": "Fry said a fish near the Square Garden day before yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:49:46", "message": "Leela ate a rocket in L.A. yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:49:50", "message": "Fry built a fish in L.A. yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:49:51", "message": "Bender built a bottle of bear on the Mars today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:49:53", "message": "Bender robbed a boat at park day after tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:49:58", "message": "Farnsworth said a rocket in L.A. yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:50:00", "message": "Amy created a mall on the Mars yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:50:03", "message": "Farnsworth played a mall in L.A. yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:50:12", "message": "Amy saw a rocket at park day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:50:18", "message": "Bender saw a mall near the Square Garden day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:50:18", "message": "Bender played an apple at park day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:50:22", "message": "Amy killed a mall near the Square Garden today"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:50:27", "message": "Dr. Zoidberg took a boat near the Square Garden day after tomorrow"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:50:33", "message": "Fry brought a rocket in L.A. day before yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:50:36", "message": "Bender brought a car in L.A. yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:50:37", "message": "Amy killed a rocket at park yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:50:46", "message": "Fry killed a fish at park tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:50:50", "message": "Bender took a mall on the Mars yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:50:58", "message": "Dr. Zoidberg saw a bottle of bear in L.A. day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:50:59", "message": "Farnsworth built a man in L.A. tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:51:05", "message": "Leela created a car near the Square Garden today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:51:09", "message": "Bender created a man on the Mars today"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:51:13", "message": "Bender killed a fish at park tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:51:15", "message": "Dr. Zoidberg saw a man near the Square Garden yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:51:24", "message": "Amy ate an apple near the Square Garden yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:51:32", "message": "Leela saw a boat on the Mars tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:51:37", "message": "Amy took a car near the Square Garden yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:51:41", "message": "Farnsworth brought a bottle of bear in L.A. today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:51:44", "message": "Amy brought an apple in L.A. tomorrow"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:51:44", "message": "Fry played a man on the Mars day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:51:46", "message": "Farnsworth saw a rocket near the Square Garden today"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:51:55", "message": "Fry robbed a man on the Mars today"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:51:58", "message": "Farnsworth killed an apple near the Square Garden tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:52:06", "message": "Amy took a car at park tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:52:10", "message": "Bender robbed a mall on the Mars today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:52:17", "message": "Bender saw a bottle of bear near the Square Garden day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:52:26", "message": "Farnsworth played an apple in L.A. day after tomorrow"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:52:32", "message": "Dr. Zoidberg said a rocket at park day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:52:40", "message": "Fry robbed a boat near the Square Garden today"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:52:42", "message": "Bender said a rocket on the Mars yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:52:47", "message": "Farnsworth ate a rocket at park tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:52:51", "message": "Farnsworth ate an apple on the Mars today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:53:00", "message": "Leela ate a man at park today"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:53:06", "message": "Bender said a fish near the Square Garden yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:53:13", "message": "Dr. Zoidberg played a bottle of bear near the Square Garden yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:53:16", "message": "Fry said a boat in L.A. yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:53:18", "message": "Dr. Zoidberg took a boat near the Square Garden day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:53:18", "message": "Fry took a bottle of bear in L.A. day before yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:53:24", "message": "Farnsworth played a man near the Square Garden day after tomorrow"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:53:31", "message": "Leela built a boat at park yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:53:38", "message": "Fry robbed a man on the Mars today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:53:40", "message": "Fry created a man in L.A. day before yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:53:47", "message": "Leela took an apple at park tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:53:49", "message": "Bender killed a car near the Square Garden yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:53:57", "message": "Amy ate a car near the Square Garden day before yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:54:06", "message": "Amy saw a mall on the Mars day after tomorrow"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:54:14", "message": "Farnsworth saw a man in L.A. yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:54:18", "message": "Farnsworth played a man on the Mars day after tomorrow"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:54:27", "message": "Dr. Zoidberg created a man at park day before yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:54:28", "message": "Bender killed a bottle of bear at park day after tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:54:28", "message": "Amy took a car at park yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:54:30", "message": "Leela took a bottle of bear at park yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:54:39", "message": "Dr. Zoidberg built a fish on the Mars day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:54:45", "message": "Fry ate a man in L.A. day after tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:54:51", "message": "Amy said a bottle of bear in L.A. day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:55:00", "message": "Leela killed a rocket at park day before yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:55:00", "message": "Leela took an apple near the Square Garden today"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:55:09", "message": "Farnsworth built a car in L.A. day after tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:55:18", "message": "Bender robbed a man near the Square Garden yesterday"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:55:27", "message": "Fry said a man on the Mars today"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:55:31", "message": "Bender brought a fish in L.A. day before yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:55:31", "message": "Farnsworth ate a man on the Mars tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:55:34", "message": "Leela brought a mall in L.A. day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:55:42", "message": "Fry ate a car near the Square Garden day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:55:48", "message": "Amy played a car near the Square Garden day before yesterday"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:55:55", "message": "Fry brought a mall near the Square Garden yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:56:02", "message": "Fry saw a man near the Square Garden day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:56:03", "message": "Farnsworth saw a rocket on the Mars day before yesterday"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:56:07", "message": "Fry built an apple in L.A. today"}
+{"log_level": "DEBUG", "timestamp": "2023-03-12 12:56:09", "message": "Amy built a car near the Square Garden yesterday"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:56:16", "message": "Dr. Zoidberg created a fish near the Square Garden tomorrow"}
+{"log_level": "ERROR", "timestamp": "2023-03-12 12:56:21", "message": "Bender took a fish in L.A. day after tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:56:29", "message": "Dr. Zoidberg ate a fish in L.A. tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:56:30", "message": "Fry took a car on the Mars day after tomorrow"}
+{"log_level": "WARNING", "timestamp": "2023-03-12 12:56:35", "message": "Bender said a car near the Square Garden tomorrow"}
+{"log_level": "INFO", "timestamp": "2023-03-12 12:56:38", "message": "Farnsworth built a man on the Mars today"}
