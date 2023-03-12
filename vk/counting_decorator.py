@@ -16,5 +16,6 @@ def print_hello():
     print("hello")
 
 
-for _ in range(10):
-    print_hello()
+if __name__ == '__main__':
+    while True:
+        print_hello()
