@@ -1,6 +1,6 @@
 # План миграции базы данных
 
-## [Условие задачи] (https://github.com/nkhaldi/Python/blob/master/saber/Task.md)
+## [Условие задачи](https://github.com/nkhaldi/Python/blob/master/saber/Task.md)
 
 ### БД до миграции
 #### Cхема
@@ -16,25 +16,65 @@ SELECT id, name, status, timestamp
 FROM base_table
 ```
 
-### Схема БД после миграции
+### БД после миграции
+#### Cхема
 ```
-base_table
-+----+---------+--------+-----------+
-| id | name_id | status | timestamp |
-+----+---------+--------+-----------+
-
-names
-+----+------+
-| id | name |
-+----+------+
+names             base_table
++----+------+     +----+---------+--------+-----------+
+| id | name |     | id | name_id | status | timestamp |
++----+------+     +----+---------+--------+-----------+
+   |                        |
+   +------one-to-many-------+
 ```
 
 #### Получение значений из таблицы
 ```sql
-SELECT t.id, n.name, t.status, t.timestamp
-FROM base_table t JOIN names n ON t.name_id = p.id
+SELECT b.id, n.name, b.status, b.timestamp
+FROM base_table b JOIN names n ON b.name_id = n.id;
 ```
 
 ## План миграции
-0. Сделать бэкапы.
-1. 
+0. Сделать бэкапы!<br>
+1. Преобразовать взаимодействующие с БД модули сервисов А таким образом,<br>
+чтобы функции, работающие с БД могли бы работать и со старой схемой, и с новой.<br>
+Опираясь на текущую схему БД преобразовать, выбирать методы работы с БД.<br>
+2. Перезапустить сервисы А.<br>
+3. Аналогично преобразовать взаимодействующие с БД модули сервисов Б.<br>
+4. Перезапустить сервисы Б.<br>
+5. Создать новую таблицу для хранения имён<br>
+```sql
+CREATE TABLE names
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+);
+```
+6. Заполнить таблицу имён<br>
+```sql
+INSERT INTO names (name)
+SELECT DISTINCT(name)
+FROM base_table;
+```
+7. Создать новую таблицу по новой схеме, которая заменит оригинальную.<br>
+```sql
+CREATE TABLE new_table
+  id INT PRIMARY KEY,
+  name_id INT FOREIGN KEY REFERENCES names(id) NOT NULL,
+  status VARCHAR(255),
+  timestamp datetime DEFAULT CURRENT_TIMESTAMP
+);
+```
+8. Заполнить временную таблицу значениями из старой.<br>
+```sql
+INSERT INTO new_table (name_id, status, timestamp)
+SELECT n.id, b.status, b.timestamp
+FROM base_table b JOIN names n ON b.name_id = n.id;
+```
+9. Удалить старую таблицу.<br>
+```sql
+DROP TABLE IF EXISTS base_table;
+```
+10. Переименовать новую таблицу под оригинальную.<br>
+```sql
+ALTER TABLE new_table RENAME base_table;
+```
+11. Тестировать.
