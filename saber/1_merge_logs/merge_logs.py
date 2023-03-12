@@ -46,6 +46,24 @@ def get_log_files():
     return log_a_path, log_b_path, merged_log_path
 
 
+def open_log_files(log_a_path, log_b_path, merged_log_path):
+    try:
+        log_a = open(log_a_path, 'r')
+        log_b = open(log_b_path, 'r')
+        merged_log = open(merged_log_path, 'w')
+    except (FileNotFoundError, PermissionError) as ex:
+        eprint(ex)
+        exit()
+
+    return log_a, log_b, merged_log
+
+
+def close_log_files(log_a, log_b, merged_log):
+    log_a.close()
+    log_b.close()
+    merged_log.close()
+
+
 def get_timestamp(line):
     try:
         json_line = json.loads(line)
@@ -72,40 +90,33 @@ def get_next_line(log_file):
     return line, ts
 
 
-def print_next_line(line, log_file):
-    print(line_a, file=merged_log)
+def print_next_line(line, log_file, merge_file):
+    print(line, file=merge_file)
     line, ts = get_next_line(log_file)
     return line, ts
 
 
-if __name__ == '__main__':
-    log_a_path, log_b_path, merged_log_path = get_log_files()
-
-    try:
-        log_a = open(log_a_path, 'r')
-        log_b = open(log_b_path, 'r')
-        merged_log = open(merged_log_path, 'w')
-    except (FileNotFoundError, PermissionError) as ex:
-        eprint(ex)
-        exit()
-
+def merge_logs(log_a, log_b, merge_file):
     line_a, ts_a = get_next_line(log_a)
     line_b, ts_b = get_next_line(log_b)
+
     while line_a and line_b:
-        if ts_a < ts_b:
-            line_a, ts_a = print_next_line(line_a, log_a)
-        elif ts_a > ts_b:
-            line_b, ts_b = print_next_line(line_b, log_b)
-        else:
-            line_a, ts_a = print_next_line(line_a, log_a)
-            line_b, ts_b = print_next_line(line_b, log_b)
+        if ts_a <= ts_b:
+            line_a, ts_a = print_next_line(line_a, log_a, merge_file)
+        if ts_a >= ts_b:
+            line_b, ts_b = print_next_line(line_b, log_b, merge_file)
 
     while line_a:
-        line_a, ts_a = print_next_line(line_a, log_a)
+        line_a, ts_a = print_next_line(line_a, log_a, merge_file)
 
     while line_b:
-        line_b, ts_b = print_next_line(line_b, log_b)
+        line_b, ts_b = print_next_line(line_b, log_b, merge_file)
 
-    log_a.close()
-    log_b.close()
-    merged_log.close()
+
+if __name__ == '__main__':
+    log_a_path, log_b_path, merged_log_path = get_log_files()
+    log_a, log_b, merged_log = open_log_files(log_a_path, log_b_path, merged_log_path)
+
+    merge_logs(log_a, log_b, merged_log)
+
+    close_log_files(log_a, log_b, merged_log)
