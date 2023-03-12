@@ -116,7 +116,5 @@ def merge_logs(log_a, log_b, merge_file):
 if __name__ == '__main__':
     path_a, path_b, path_merged = get_log_files()
     log_a, log_b, merged_log = open_log_files(path_a, path_b, path_merged)
-
     merge_logs(log_a, log_b, merged_log)
-
     close_log_files(log_a, log_b, merged_log)
