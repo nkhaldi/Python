@@ -43,7 +43,7 @@ FROM base_table b JOIN names n ON b.name_id = n.id;
 4. Перезапустить сервисы Б.<br>
 5. Создать новую таблицу для хранения имён<br>
 ```sql
-CREATE TABLE names
+CREATE TABLE names (
   id INT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
 );
@@ -56,7 +56,7 @@ FROM base_table;
 ```
 7. Создать новую таблицу по новой схеме, которая заменит оригинальную.<br>
 ```sql
-CREATE TABLE new_table
+CREATE TABLE new_table (
   id INT PRIMARY KEY,
   name_id INT FOREIGN KEY REFERENCES names(id) NOT NULL,
   status VARCHAR(255),
