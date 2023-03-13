@@ -101,6 +101,9 @@ def merge_logs(log_a, log_b, merge_file):
     line_b, ts_b = get_next_line(log_b)
 
     while line_a and line_b:
+        # Используем 2 отдельных if подряд, чтобы в случае,
+        # когда у логов одинаковое время (ts_a == ts_b),
+        # записать оба лога по очереди
         if ts_a <= ts_b:
             line_a, ts_a = print_next_line(line_a, log_a, merge_file)
         if ts_a >= ts_b:
