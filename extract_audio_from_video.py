@@ -1,9 +1,9 @@
-import moviepy.editor
+from moviepy.editor import VideoFileClip
 
 
 try:
     video_file = 'tests/video.mp4'
-    video = moviepy.editor.VideoFileClip(video_file)
+    video = VideoFileClip(video_file)
 except Exception as e:
     print(f"Videofile {video_file} was not found. {e}")
     exit()
