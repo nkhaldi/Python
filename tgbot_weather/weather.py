@@ -1,10 +1,9 @@
-from aiogram import types, Dispatcher
-from aiogram.dispatcher.storage import FSMContext
-
-import inline
 import api_requests as api
-from states import Location
+import inline
+from aiogram import Dispatcher, types
+from aiogram.dispatcher.storage import FSMContext
 from location import get_location
+from states import Location
 
 
 # Commands

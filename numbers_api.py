@@ -18,7 +18,6 @@
 
 import requests
 
-
 proxies = {"http": "socks5://127.0.0.1:9050", "https": "socks5://127.0.0.1:9050"}
 
 with open("tests/numbers_api.txt") as fd:

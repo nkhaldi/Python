@@ -9,10 +9,9 @@
 и вывести их в алфавитном порядке, разделяя пробелами.
 """
 
-from re import findall
 from collections import Counter
+from re import findall
 from urllib.request import urlopen
-
 
 url = "https://stepik.org/media/attachments/lesson/209719/2.html"
 html = str(urlopen(url).read().decode("utf-8"))

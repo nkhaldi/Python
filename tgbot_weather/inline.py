@@ -1,6 +1,5 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-
 BTN_TEMPERATURE = InlineKeyboardButton("Temperature", callback_data="temperature")
 BTN_WIND = InlineKeyboardButton("Wind", callback_data="wind")
 BTN_SUNTIME = InlineKeyboardButton("Suntime", callback_data="suntime")

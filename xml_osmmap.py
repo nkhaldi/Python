@@ -12,9 +12,9 @@ https://stepik.org/media/attachments/lesson/245678/map1.osm
 """
 
 import os
-import wget
 import xml.etree.ElementTree as ET
 
+import wget
 
 osmfile = "tests/map1.osm"
 url = "https://stepik.org/media/attachments/lesson/245678/map1.osm"

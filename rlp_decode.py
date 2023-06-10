@@ -27,7 +27,6 @@ https://github.com/ethereum/wiki/wiki/RLP).
 # Решение с подключенной библиотекой rlp
 import rlp
 
-
 with open("tests/rlp_input.txt", "r") as in_fd:
     lines = map(lambda x: x.strip(), in_fd.readlines())
 

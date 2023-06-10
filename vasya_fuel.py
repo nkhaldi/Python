@@ -11,9 +11,9 @@ https://stepik.org/media/attachments/lesson/245681/map2.osm
 """
 
 import os
-import requests
 import xml.etree.ElementTree as ET
 
+import requests
 
 osmfile = "tests/map2.osm"
 url = "https://stepik.org/media/attachments/lesson/245681/map2.osm"

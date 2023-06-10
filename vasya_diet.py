@@ -16,9 +16,8 @@ https://stepik.org/media/attachments/lesson/245290/trekking2.xlsx
 Числа округлите до целых вниз и введите через пробел.
 """
 
-import xlrd
 import requests
-
+import xlrd
 
 url = "https://stepik.org/media/attachments/lesson/245290/trekking2.xlsx"
 request = requests.get(url)

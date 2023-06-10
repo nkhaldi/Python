@@ -1,6 +1,5 @@
 from moviepy.editor import VideoFileClip
 
-
 try:
     video_file = "tests/video.mp4"
     video = VideoFileClip(video_file)

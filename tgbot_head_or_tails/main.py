@@ -5,10 +5,10 @@
 # http://t.me/Head_or_Tail_Bot
 
 
-import telebot
 from random import randrange
-from telebot.types import ReplyKeyboardMarkup as keyboard
 
+import telebot
+from telebot.types import ReplyKeyboardMarkup as keyboard
 
 token_file = open("/Users/narek/.pass/.head_or_tail.token")
 token = token_file.read().rstrip("\n")

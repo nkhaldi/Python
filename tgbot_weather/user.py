@@ -1,7 +1,6 @@
+import inline
 from aiogram import Dispatcher
 from aiogram.types import Message
-
-import inline
 from states import Location
 
 

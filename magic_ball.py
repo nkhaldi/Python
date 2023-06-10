@@ -9,7 +9,6 @@
 
 from random import randint
 
-
 answers = [
     "Да",
     "Нет",

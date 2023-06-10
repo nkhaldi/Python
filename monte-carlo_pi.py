@@ -13,7 +13,6 @@ https://ucarecdn.com/27be3712-7d27-407f-90df-0d97e2a78986/
 import math
 from random import uniform
 
-
 k = 0  # Количество попаданий
 n = 10**6  # Количество испытаний
 pi0 = 4  # Площадь квадрата, в который вписан круг

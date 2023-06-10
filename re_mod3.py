@@ -9,7 +9,6 @@
 import re
 import sys
 
-
 pattern = "^(0|(1(01*0)*1))*$"
 pattern = re.compile(pattern)
 

@@ -1,7 +1,6 @@
-from aiogram import types, Dispatcher
-from aiogram.dispatcher.storage import FSMContext
-
 import inline
+from aiogram import Dispatcher, types
+from aiogram.dispatcher.storage import FSMContext
 from states import Location
 
 

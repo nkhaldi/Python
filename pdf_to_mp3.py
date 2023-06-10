@@ -7,10 +7,11 @@
 Канал: PythonToday
 """
 
+from pathlib import Path
+
 import pdfplumber
 from art import tprint
 from gtts import gTTS
-from pathlib import Path
 
 
 def pdf_to_mp3(file_path="test.pdf", language="en"):

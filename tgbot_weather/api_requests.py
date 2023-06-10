@@ -1,8 +1,8 @@
+from datetime import datetime
+from enum import IntEnum
+
 import requests
 from environs import Env
-from enum import IntEnum
-from datetime import datetime
-
 
 env = Env()
 env.read_env(".env")

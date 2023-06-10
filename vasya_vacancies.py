@@ -10,10 +10,10 @@ https://stepik.org/media/attachments/lesson/245267/salaries.xlsx.
 по всем регионам.
 """
 
-import xlrd
-import requests
-from statistics import median, mean
+from statistics import mean, median
 
+import requests
+import xlrd
 
 url = "https://stepik.org/media/attachments/lesson/245267/salaries.xlsx"
 request = requests.get(url)

@@ -2,7 +2,6 @@
 
 from TreeStore import TreeStore
 
-
 items = [
     {"id": 1, "parent": "root"},
     {"id": 2, "parent": 1, "type": "test"},

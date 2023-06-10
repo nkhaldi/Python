@@ -6,6 +6,7 @@
 """
 
 from random import randint
+
 from matplotlib import pyplot as plt
 
 

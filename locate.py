@@ -8,7 +8,6 @@ import json
 from http.client import responses
 from urllib.request import urlopen
 
-
 macs = list()
 while True:
     try:

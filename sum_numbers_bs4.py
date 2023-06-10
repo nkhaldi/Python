@@ -7,9 +7,9 @@
 Для доступа к ячейкам используйте возможности BeautifulSoup.
 """
 
-from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+from bs4 import BeautifulSoup
 
 url = "https://stepik.org/media/attachments/lesson/209723/5.html"
 html = str(urlopen(url).read().decode("utf-8"))

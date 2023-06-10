@@ -15,7 +15,6 @@ Base58 кодирование используется в Bitcoin для пол�
 
 import bitcoin as btc
 
-
 fd = open("tests/btc_addr.txt")
 lines = map(lambda line: line.rstrip(), fd.readlines())
 fd.close()

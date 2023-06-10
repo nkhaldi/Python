@@ -12,9 +12,9 @@ https://stepik.org/media/attachments/lesson/245299/rogaikopyta.zip
 """
 
 import os
-import xlrd
 import zipfile
 
+import xlrd
 
 payroll = {}
 zipdir = "tests/xlsx_files"

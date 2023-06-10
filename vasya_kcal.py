@@ -17,9 +17,8 @@ https://stepik.org/media/attachments/lesson/245290/trekking1.xlsx
 продуктов, по одному в строке.
 """
 
-import xlrd
 import requests
-
+import xlrd
 
 url = "https://stepik.org/media/attachments/lesson/245290/trekking1.xlsx"
 request = requests.get(url)

@@ -1,10 +1,9 @@
 import asyncio
 import logging
-from environs import Env
 
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-
+from environs import Env
 from location import register_location
 from user import register_user
 from weather import register_weather
