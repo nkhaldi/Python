@@ -17,7 +17,7 @@ def caesar_encpypt(line, shift):
     return encrypted
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     input_line = input("Enter line to encrypt: ")
     # input_line = 'the lazy dog jumped over the quick brown fox'
     shift = 2

@@ -29,7 +29,7 @@ class Triangle:
         print("I am created")
 
     def tlen(self, p1, p2):
-        return np.sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
+        return np.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2)
 
     def perim(self):
         return self.l1 + self.l2 + self.l3

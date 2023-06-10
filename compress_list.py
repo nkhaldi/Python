@@ -23,7 +23,7 @@ def compress(lst):
             ans.append(f"{left}")
             break
 
-        while (srt[i+1] - srt[i] == 1):
+        while srt[i + 1] - srt[i] == 1:
             i += 1
             if i == len(srt) - 1:
                 break
@@ -35,7 +35,7 @@ def compress(lst):
             ans.append(f"{left}-{right}")
         i += 1
 
-    return ','.join(ans)
+    return ",".join(ans)
 
 
 res = compress([1, 4, 5, 2, 3, 9, 8, 11, 0])

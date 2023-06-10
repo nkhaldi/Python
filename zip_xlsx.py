@@ -17,8 +17,8 @@ import zipfile
 
 
 payroll = {}
-zipdir = 'tests/xlsx_files'
-zipname = 'tests/rogaikopyta.zip'
+zipdir = "tests/xlsx_files"
+zipname = "tests/rogaikopyta.zip"
 
 if zipdir not in os.listdir():
     zipfile = zipfile.ZipFile(zipname)
@@ -31,6 +31,6 @@ for zfile in os.listdir(zipdir):
     sh = wb.sheet_by_name(wb.sheet_names()[0])
     payroll[sh.row_values(1)[1]] = int(sh.row_values(1)[3])
 
-with open("tests/zip_xlsx.txt", 'w', encoding='utf-8') as fd:
+with open("tests/zip_xlsx.txt", "w", encoding="utf-8") as fd:
     for row in sorted(payroll.items(), key=lambda item: item[0]):
         fd.write(f"{row[0]} {str(row[1])}\n")

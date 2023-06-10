@@ -10,7 +10,7 @@ def parse(file_name):
     riddles = dict()
     with open(file_name) as fd:
         for line in fd:
-            temp = line.split('#')
+            temp = line.split("#")
             riddles[temp[0]] = temp[1][0:-1]
     return riddles
 
@@ -18,7 +18,7 @@ def parse(file_name):
 if __name__ == "__main__":
     riddles = parse("tests/riddles.txt")
     for riddle in riddles.keys():
-        print('~' * 50)
+        print("~" * 50)
         print(riddle)
         ans = input().lower()
         if ans == riddles[riddle].lower():

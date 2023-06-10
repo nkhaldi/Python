@@ -12,12 +12,12 @@ def get_card_count(n, k, cards) -> int:
     return rec(cards, 0, k)
 
 
-if __name__ == '__main__':
-    '''
+if __name__ == "__main__":
+    """
     n = int(input())
     k = int(input())
     cards = list(map(int, input().split()))
-    '''
+    """
     n = 7
     k = 3
     cards = [5, 8, 2, 1, 3, 4, 11]

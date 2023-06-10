@@ -9,13 +9,13 @@ http://<это число>.ru. Например, число 12 должно бы
 ссылкой на страницу http://12.ru.
 """
 
-fname = 'tests/mul_table.html'
-with open(fname, 'w') as fd:
-    fd.write('<html><body><table>')
+fname = "tests/mul_table.html"
+with open(fname, "w") as fd:
+    fd.write("<html><body><table>")
     for i in range(1, 11):
-        fd.write('<tr>')
+        fd.write("<tr>")
         for j in range(1, 11):
             mul = i * j
-            fd.write(f'<td><a href=http://{mul}.ru>{mul}</a></td>')
-        fd.write('</tr>')
-    fd.write('</table></body></html>')
+            fd.write(f"<td><a href=http://{mul}.ru>{mul}</a></td>")
+        fd.write("</tr>")
+    fd.write("</table></body></html>")

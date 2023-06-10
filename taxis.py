@@ -26,5 +26,5 @@ for gr in groups:
     if not put:
         taxis += [gr]
 
-print(len(taxis), 'cars')
+print(len(taxis), "cars")
 print(taxis)

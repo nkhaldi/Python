@@ -4,9 +4,9 @@ def insertion_sort(array):
         item = array[i]
 
         while j >= 0 and array[j] > item:
-            array[j+1] = array[j]
+            array[j + 1] = array[j]
             j -= 1
 
-        array[j+1] = item
+        array[j + 1] = item
 
     return array

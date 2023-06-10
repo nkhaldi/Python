@@ -41,5 +41,5 @@ for k in range(n * m):
 
 for i in range(n):
     for j in range(m):
-        print(str(matrix[i][j]).ljust(3), end='')
+        print(str(matrix[i][j]).ljust(3), end="")
     print()

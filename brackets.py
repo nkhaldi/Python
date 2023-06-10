@@ -9,12 +9,12 @@
 def brackets(brac):
     stack = []
     for el in brac:
-        if el in ['[', '(', '{', '<']:
+        if el in ["[", "(", "{", "<"]:
             stack.append(el)
-        elif el in [']', ')', '}', '>']:
+        elif el in ["]", ")", "}", ">"]:
             if len(stack) > 0:
                 top = stack.pop()
-                if top + el not in ['[]', '()', '{}', '<>']:
+                if top + el not in ["[]", "()", "{}", "<>"]:
                     return False
             else:
                 return False

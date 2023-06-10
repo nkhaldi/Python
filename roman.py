@@ -23,12 +23,7 @@ IV, IX, XL, XC, CD и CM, соответственно.
 
 def get_num(inp, pos):
     num = int(inp)
-    dic = {
-        0: ('M', '?', '?', '?'),
-        1: ('C', 'CD', 'D', 'CM'),
-        2: ('X', 'XL', 'L', 'XC'),
-        3: ('I', 'IV', 'V', 'IX')
-    }
+    dic = {0: ("M", "?", "?", "?"), 1: ("C", "CD", "D", "CM"), 2: ("X", "XL", "L", "XC"), 3: ("I", "IV", "V", "IX")}
     one, four, five, nine = dic[pos]
     if num < 4:
         return one * num
@@ -43,28 +38,20 @@ def get_num(inp, pos):
 def decimal_to_roman(inp):
     lst = list()
     if int(inp) > 9999:
-        return 'The number is too big'
+        return "The number is too big"
     if int(inp) < 10:
-        inp = '000' + inp
+        inp = "000" + inp
     elif int(inp) < 100:
-        inp = '00' + inp
+        inp = "00" + inp
     elif int(inp) < 1000:
-        inp = '0' + inp
+        inp = "0" + inp
     for i in range(len(inp)):
         lst.append(get_num(inp[i], i))
-    return ''.join(lst)
+    return "".join(lst)
 
 
 def roman_to_decimal(inp):
-    dic = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
+    dic = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
     rom = 0
     while inp:
         if len(inp) == 1 or dic[inp[0]] >= dic[inp[1]]:

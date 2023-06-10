@@ -15,14 +15,14 @@ logger = logging.getLogger(__name__)
 async def main():
     logging.basicConfig(
         level=logging.INFO,
-        format=u'%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s] - %(name)s - %(message)s',
+        format="%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s] - %(name)s - %(message)s",
     )
     logger.info("Starting bot")
 
     env = Env()
     env.read_env(".env")
 
-    bot = Bot(token=env.str("BOT_TOKEN"), parse_mode='HTML')
+    bot = Bot(token=env.str("BOT_TOKEN"), parse_mode="HTML")
     storage = MemoryStorage()
     dp = Dispatcher(bot, storage=storage)
 
@@ -39,7 +39,7 @@ async def main():
         await bot.session.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):

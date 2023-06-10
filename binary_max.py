@@ -21,7 +21,7 @@ def max_lower_or_equal(array, value):
     return left
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     value = int(input())
     array = list(map(int, input().split()))
     print(max_lower_or_equal(array, value))

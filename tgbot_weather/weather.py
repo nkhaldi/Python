@@ -46,10 +46,10 @@ async def call_suntime(callback: types.CallbackQuery, state: FSMContext):
 
 
 def register_weather(dp: Dispatcher):
-    dp.register_message_handler(cmd_temperature, commands=['temperature'], state=Location.location)
-    dp.register_message_handler(cmd_wind, commands=['wind'], state=Location.location)
-    dp.register_message_handler(cmd_suntime, commands=['suntime'], state=Location.location)
+    dp.register_message_handler(cmd_temperature, commands=["temperature"], state=Location.location)
+    dp.register_message_handler(cmd_wind, commands=["wind"], state=Location.location)
+    dp.register_message_handler(cmd_suntime, commands=["suntime"], state=Location.location)
 
-    dp.register_callback_query_handler(call_temperature, text='temperature', state=Location.location)
-    dp.register_callback_query_handler(call_wind, text='wind', state=Location.location)
-    dp.register_callback_query_handler(call_suntime, text='suntime', state=Location.location)
+    dp.register_callback_query_handler(call_temperature, text="temperature", state=Location.location)
+    dp.register_callback_query_handler(call_wind, text="wind", state=Location.location)
+    dp.register_callback_query_handler(call_suntime, text="suntime", state=Location.location)

@@ -8,7 +8,6 @@ push, pop, max должны работать за O(1).
 
 
 class MaxStack:
-
     def __init__(self):
         self.stack = list()
         self.maxValues = [None]

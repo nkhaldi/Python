@@ -21,15 +21,15 @@ def run_sorting(algorythm, length, reps):
     print(f"min: {min(times)}, max: {max(times)}.\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     LENGTH, REPS = 10, 2
-    print('bubble_sort')
+    print("bubble_sort")
     run_sorting(algorythm=bubble_sort, length=LENGTH, reps=REPS)
-    print('insertion_sort')
+    print("insertion_sort")
     run_sorting(algorythm=insertion_sort, length=LENGTH, reps=REPS)
-    print('merge_sort')
+    print("merge_sort")
     run_sorting(algorythm=merge_sort, length=LENGTH, reps=REPS)
-    print('quick_sort')
+    print("quick_sort")
     run_sorting(algorythm=quick_sort, length=LENGTH, reps=REPS)
-    print('selection_sort')
+    print("selection_sort")
     run_sorting(algorythm=selection_sort, length=LENGTH, reps=REPS)

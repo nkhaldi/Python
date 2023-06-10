@@ -15,12 +15,12 @@ import requests
 import xml.etree.ElementTree as ET
 
 
-osmfile = 'tests/map2.osm'
-url = 'https://stepik.org/media/attachments/lesson/245681/map2.osm'
+osmfile = "tests/map2.osm"
+url = "https://stepik.org/media/attachments/lesson/245681/map2.osm"
 res = requests.get(url)
 
 if not os.access(osmfile, os.F_OK):
-    with open(osmfile, 'wb') as f:
+    with open(osmfile, "wb") as f:
         f.write(res.content)
 
 fuels = ET.parse(osmfile).getroot().findall("./node/tag[@v='fuel']")

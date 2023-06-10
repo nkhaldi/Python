@@ -28,10 +28,10 @@ https://github.com/ethereum/wiki/wiki/RLP).
 import rlp
 
 
-with open('tests/rlp_input.txt', 'r') as in_fd:
+with open("tests/rlp_input.txt", "r") as in_fd:
     lines = map(lambda x: x.strip(), in_fd.readlines())
 
-with open('tests/rlp_output1.txt', 'w') as out_fd:
+with open("tests/rlp_output1.txt", "w") as out_fd:
     for hexStr in lines:
         decodedStr = rlp.decode(bytes.fromhex(hexStr))
         encodedHex = rlp.encode(decodedStr[::-1]).hex()
@@ -50,14 +50,14 @@ def rlpDecodeString(hexStr: str):
     result = hexStr[:2]
     bsize = int(hexStr[:2], 16)
     if 128 <= bsize <= 183:
-        for i in range(len(hexStr)-2, 1, -2):
-            result += hexStr[i] + hexStr[i+1]
+        for i in range(len(hexStr) - 2, 1, -2):
+            result += hexStr[i] + hexStr[i + 1]
     elif 184 <= bsize <= 191:
         bsize -= 183
         for i in range(1, bsize + 1):
-            result += hexStr[2*i:2*i+2]
-        for i in range(len(hexStr)-2, 2*bsize+1, -2):
-            result += hexStr[i] + hexStr[i+1]
+            result += hexStr[2 * i : 2 * i + 2]
+        for i in range(len(hexStr) - 2, 2 * bsize + 1, -2):
+            result += hexStr[i] + hexStr[i + 1]
     return result
 
 
@@ -73,14 +73,14 @@ def rlpDecodeArray(hexStr: str):
             i += isize
     elif bsize <= 255:
         bsize -= 247
-        for i in range(1, bsize+1):
-            result += hexStr[2*i:2*i+2]
-        i = 2*bsize + 2
+        for i in range(1, bsize + 1):
+            result += hexStr[2 * i : 2 * i + 2]
+        i = 2 * bsize + 2
         while i < len(hexStr):
             el, isize = rlpDecodeArrayElement(hexStr[i:])
             elements.append(el)
             i += isize
-    result += ''.join(elements[::-1])
+    result += "".join(elements[::-1])
     return result
 
 
@@ -91,25 +91,25 @@ def rlpDecodeArrayElement(hexStr: str):
         rsize = 2
     elif 128 <= bsize <= 183:
         bsize -= 128
-        rsize = 2*bsize + 2
+        rsize = 2 * bsize + 2
     elif 184 <= bsize <= 191:
         bsize -= 183
         size = bsize
-        rsize = 4*size + 2
+        rsize = 4 * size + 2
     elif 192 <= bsize <= 247:
         bsize -= 192
-        rsize = 2*bsize + 2
+        rsize = 2 * bsize + 2
     elif bsize <= 255:
         bsize -= 247
-        rsize = 4*size + 2
+        rsize = 4 * size + 2
     result = hexStr[:rsize]
     return (result, rsize)
 
 
 # Main
-with open('tests/rlp_input.txt', 'r') as in_fd:
+with open("tests/rlp_input.txt", "r") as in_fd:
     lines = map(lambda x: x.strip(), in_fd.readlines())
 
-with open('tests/rlp_output2.txt', 'w') as out_fd:
+with open("tests/rlp_output2.txt", "w") as out_fd:
     for line in lines:
         print(rlpDecode(line), file=out_fd)

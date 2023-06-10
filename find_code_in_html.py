@@ -15,8 +15,8 @@ from urllib.request import urlopen
 
 
 url = "https://stepik.org/media/attachments/lesson/209719/2.html"
-html = str(urlopen(url).read().decode('utf-8'))
-regex = r'<code>(.*?)</code>'
+html = str(urlopen(url).read().decode("utf-8"))
+regex = r"<code>(.*?)</code>"
 lst = sorted(findall(regex, html))
 
 ans = list()
@@ -25,4 +25,4 @@ max_cnt = max(count.values())
 for key in count:
     if count[key] == max_cnt:
         ans.append(key)
-print(' '.join(ans))
+print(" ".join(ans))

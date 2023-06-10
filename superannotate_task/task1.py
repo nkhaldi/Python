@@ -4,10 +4,10 @@
 def get_numbers_from_line(line):
     current, minus = None, 1
     numbers = list()
-    digits_set = '0123456789'
+    digits_set = "0123456789"
 
     for char in line:
-        if char == '-':
+        if char == "-":
             if current is not None:
                 numbers.append(current * minus)
             current, minus = None, -1
@@ -42,7 +42,7 @@ def get_sums(numbers):
     return pos_sum, neg_sum
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     input_line = input("Enter line to parse: ")
     # input_line = '-100#^sdfkj8902w3ir021@swf-20'
     numbers = get_numbers_from_line(input_line)

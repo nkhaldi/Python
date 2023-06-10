@@ -31,7 +31,7 @@ def is_imposible(quest, quests, passed):
     return is_imposible(quests[quest], quests, passed)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     quests = [0] + [int(i) for i in input().split()]
 

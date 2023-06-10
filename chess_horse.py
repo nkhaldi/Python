@@ -14,14 +14,14 @@
 
 y0, x0 = list(input())
 x = 8 - int(x0)
-y = ord(y0) - ord('a')
+y = ord(y0) - ord("a")
 
 for i in range(8):
     for j in range(8):
         if i == x and j == y:
-            print('N', end=' ')
-        elif (x-i)**2 + (y-j)**2 == 5:
-            print('*', end=' ')
+            print("N", end=" ")
+        elif (x - i) ** 2 + (y - j) ** 2 == 5:
+            print("*", end=" ")
         else:
-            print('.', end=' ')
+            print(".", end=" ")
     print()

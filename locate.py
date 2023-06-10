@@ -19,10 +19,10 @@ while True:
 
 for mac in macs:
     url = "https://api.mylnikov.org/geolocation/wifi?v=1.2&bssid=" + mac
-    html = str(urlopen(url).read().decode('utf-8'))
+    html = str(urlopen(url).read().decode("utf-8"))
     res = json.loads(html)
-    print(responses[res['result']])
-    if res['result'] == 200:
-        print('lat:', res['data']['lat'])
-        print('lon:', res['data']['lon'])
-        print('location:', res['data']['location'])
+    print(responses[res["result"]])
+    if res["result"] == 200:
+        print("lat:", res["data"]["lat"])
+        print("lon:", res["data"]["lon"])
+        print("location:", res["data"]["location"])

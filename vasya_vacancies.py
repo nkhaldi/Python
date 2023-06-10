@@ -15,7 +15,7 @@ import requests
 from statistics import median, mean
 
 
-url = 'https://stepik.org/media/attachments/lesson/245267/salaries.xlsx'
+url = "https://stepik.org/media/attachments/lesson/245267/salaries.xlsx"
 request = requests.get(url)
 workbook = xlrd.open_workbook(file_contents=request.content)
 sheet = workbook.sheet_by_index(0)

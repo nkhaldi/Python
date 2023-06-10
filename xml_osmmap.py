@@ -16,18 +16,18 @@ import wget
 import xml.etree.ElementTree as ET
 
 
-osmfile = 'tests/map1.osm'
-url = 'https://stepik.org/media/attachments/lesson/245678/map1.osm'
+osmfile = "tests/map1.osm"
+url = "https://stepik.org/media/attachments/lesson/245678/map1.osm"
 
 if not os.access(osmfile, os.F_OK):
-    wget.download(url, out='tests/')
+    wget.download(url, out="tests/")
     print()
 
 taged = 0
 empty = 0
 root = ET.parse(osmfile).getroot()
-for child in root.findall('node'):
-    if child.find('tag') is None:
+for child in root.findall("node"):
+    if child.find("tag") is None:
         empty += 1
     else:
         taged += 1

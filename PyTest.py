@@ -5,10 +5,7 @@ import pytest
 
 class TestFloatClass:
     # Is integer (parametrized)
-    @pytest.mark.parametrize(
-        "num",
-        [-76.0, -54.32, -1, -0.5, 0, 0.5, 1, 23.45, 67.0]
-    )
+    @pytest.mark.parametrize("num", [-76.0, -54.32, -1, -0.5, 0, 0.5, 1, 23.45, 67.0])
     def test_flt_one(self, num):
         try:
             assert num.is_integer()
@@ -30,7 +27,7 @@ class TestFloatClass:
     # Are integer and fractional parts equal (negative)
     def test_flt_three(self):
         num = 123.456
-        integ, fract = str(num).split('.')
+        integ, fract = str(num).split(".")
         integ, fract = int(integ), int(fract)
         delta = 0.0001
         try:
@@ -41,10 +38,7 @@ class TestFloatClass:
 
 class TestDictClass:
     # Has all numeric values
-    @pytest.mark.parametrize(
-        "dic",
-        [{'a': 12, 'b': 45}, {'a': 12, 'b': '12'}, {'a': '12', 'b': 'ab'}]
-    )
+    @pytest.mark.parametrize("dic", [{"a": 12, "b": 45}, {"a": 12, "b": "12"}, {"a": "12", "b": "ab"}])
     def test_dic_one(self, dic):
         result = True
         for val in dic.values():
@@ -58,7 +52,7 @@ class TestDictClass:
 
     # Has more than 2 keys (positive)
     def test_dic_two(self):
-        dic = {'a': 123, 'b': '123', 'c': 'abc'}
+        dic = {"a": 123, "b": "123", "c": "abc"}
         try:
             assert len(dic.keys()) > 2
         except AssertionError:
@@ -66,7 +60,7 @@ class TestDictClass:
 
     # Has equal values (negative)
     def test_dic_three(self):
-        dic = {'a': 123, 'b': '123', 'c': 'abc'}
+        dic = {"a": 123, "b": "123", "c": "abc"}
         val_set = set(dic.values())
         try:
             assert len(val_set) < len(dic.values())

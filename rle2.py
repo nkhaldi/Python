@@ -13,18 +13,18 @@
    к нему добавляется число повторений
 """
 
-letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def RLE(input_line):
     answer = list()
-    current = ''
+    current = ""
     counter = 0
     for el in input_line:
         if el not in letters:
             raise ValueError
 
-        if current == '':
+        if current == "":
             current = el
             counter = 1
         elif el != current:
@@ -40,4 +40,4 @@ def RLE(input_line):
     if counter > 1:
         answer.append(str(counter))
 
-    return ''.join(answer)
+    return "".join(answer)

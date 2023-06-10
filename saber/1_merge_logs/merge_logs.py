@@ -18,7 +18,7 @@ def get_log_files():
         eprint("Log files are not given.", usage=True)
         exit()
 
-    if path_a == '-h' or path_a == '--help':
+    if path_a == "-h" or path_a == "--help":
         eprint("Merge log files.", usage=True)
         exit()
 
@@ -30,15 +30,15 @@ def get_log_files():
     try:
         opt = sys.argv[3]
     except (IndexError, ValueError):
-        opt = '-d'
+        opt = "-d"
 
-    path_merged = 'logs/path_merged.jsonl'
-    if opt == '-o':
+    path_merged = "logs/path_merged.jsonl"
+    if opt == "-o":
         try:
             path_merged = sys.argv[4]
         except (IndexError, ValueError):
             eprint("Path to merged log is not given.", usage=True)
-    elif opt == '-d' or opt == '--default':
+    elif opt == "-d" or opt == "--default":
         print(f"Printing merged log into default file {path_merged}")
     else:
         eprint(f"Unknown option {opt}.", usage=True)
@@ -48,9 +48,9 @@ def get_log_files():
 
 def open_log_files(path_a, path_b, path_merged):
     try:
-        log_a = open(path_a, 'r')
-        log_b = open(path_b, 'r')
-        merged_log = open(path_merged, 'w')
+        log_a = open(path_a, "r")
+        log_b = open(path_b, "r")
+        merged_log = open(path_merged, "w")
     except (FileNotFoundError, PermissionError) as ex:
         eprint(ex)
         exit()
@@ -67,7 +67,7 @@ def close_log_files(log_a, log_b, merged_log):
 def get_timestamp(line):
     try:
         json_line = json.loads(line)
-        ts = json_line['timestamp']
+        ts = json_line["timestamp"]
     except json.decoder.JSONDecodeError:
         eprint(f"Can't decode JSON line: {line}")
         return None
@@ -116,7 +116,7 @@ def merge_logs(log_a, log_b, merge_file):
         line_b, ts_b = print_next_line(line_b, log_b, merge_file)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     path_a, path_b, path_merged = get_log_files()
     log_a, log_b, merged_log = open_log_files(path_a, path_b, path_merged)
     merge_logs(log_a, log_b, merged_log)

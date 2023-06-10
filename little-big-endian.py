@@ -23,11 +23,11 @@ Ethereum использует последовательность big-endian.
 
 print("Enter number to encode:")
 n = bin(int(input()))[2:]
-add = '0' * (28 - len(n))
+add = "0" * (28 - len(n))
 bits = add + n
 
-print('little-endian:')
-print(bits[21:], bits[14:21], bits[7:14],  bits[:7], sep=' ')
+print("little-endian:")
+print(bits[21:], bits[14:21], bits[7:14], bits[:7], sep=" ")
 
-print('big-endian:')
-print(bits[:7], bits[7:14], bits[14:21],  bits[21:], sep=' ')
+print("big-endian:")
+print(bits[:7], bits[7:14], bits[14:21], bits[21:], sep=" ")

@@ -20,7 +20,7 @@ import xlrd
 import requests
 
 
-url = 'https://stepik.org/media/attachments/lesson/245290/trekking2.xlsx'
+url = "https://stepik.org/media/attachments/lesson/245290/trekking2.xlsx"
 request = requests.get(url)
 workbook = xlrd.open_workbook(file_contents=request.content)
 directory = workbook.sheet_by_name(workbook.sheet_names()[0])
@@ -32,6 +32,6 @@ for i in range(1, layout.nrows):
     for j in range(1, directory.nrows):
         if name == directory.row_values(j)[0]:
             params = directory.row_values(j, 1)
-            summ = [par * mass/100 if par else 0 for par in params]
+            summ = [par * mass / 100 if par else 0 for par in params]
             res = [x + y for x, y in zip(res, summ)]
 print(*map(int, res))

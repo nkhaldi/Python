@@ -21,7 +21,7 @@ import xlrd
 import requests
 
 
-url = 'https://stepik.org/media/attachments/lesson/245290/trekking1.xlsx'
+url = "https://stepik.org/media/attachments/lesson/245290/trekking1.xlsx"
 request = requests.get(url)
 workbook = xlrd.open_workbook(file_contents=request.content)
 sheet = workbook.sheet_by_index(0)

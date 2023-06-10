@@ -16,18 +16,18 @@ Base58 кодирование используется в Bitcoin для пол�
 import bitcoin as btc
 
 
-fd = open('tests/btc_addr.txt')
+fd = open("tests/btc_addr.txt")
 lines = map(lambda line: line.rstrip(), fd.readlines())
 fd.close()
 
 symbols = dict()
 for line in lines:
     hex_line = hex(int(line, 2))[2:]
-    hex0_line = (40 - len(hex_line))*'0' + hex_line
+    hex0_line = (40 - len(hex_line)) * "0" + hex_line
     b58_line = btc.hex_to_b58check(hex0_line)
     for smb in b58_line:
         symbols[smb] = symbols[smb] + 1 if smb in symbols else 1
 
-if '1' in symbols:
-    del symbols['1']
+if "1" in symbols:
+    del symbols["1"]
 print(max(symbols, key=lambda x: symbols[x]))

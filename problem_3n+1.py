@@ -15,7 +15,7 @@ from matplotlib import pyplot as plt
 
 def get_counter(n: int):
     cnt = 0
-    while (n > 1):
+    while n > 1:
         if n % 2 == 0:
             n = n // 2
         else:
@@ -29,19 +29,19 @@ def plot_result(X, Y):
     ymax = max(Y)
     plt.plot(X, Y)
     plt.grid(True)
-    plt.title('3n+1 problem')
-    plt.xlabel('Number n')
-    plt.ylabel('Operations')
-    plt.axis([0, xmax, 0, ymax+1])
+    plt.title("3n+1 problem")
+    plt.xlabel("Number n")
+    plt.ylabel("Operations")
+    plt.axis([0, xmax, 0, ymax + 1])
     plt.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     nrange = int(input())
 
     X, Y = [], []
     max_n, max_cnt = 0, 0
-    for n in range(1, nrange+1):
+    for n in range(1, nrange + 1):
         X.append(n)
         cnt = get_counter(n)
         Y.append(cnt)

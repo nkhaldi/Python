@@ -25,6 +25,6 @@ def get_int(start_message, error_message, end_message):
     return inp
 
 
-inp = get_int('Input int number:', 'Wrong value. Input integer:', 'Thank you.')
+inp = get_int("Input int number:", "Wrong value. Input integer:", "Thank you.")
 print("inp = ", inp)
 print("type = ", type(inp))

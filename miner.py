@@ -22,24 +22,24 @@ n строк поля, в каждой ячейке которого будет 
 
 def count_mines(wfield, i, j):
     cnt = 0
-    if wfield[i][j] == '*':
-        return '*'
+    if wfield[i][j] == "*":
+        return "*"
     else:
-        if wfield[i - 1][j - 1] == '*':
+        if wfield[i - 1][j - 1] == "*":
             cnt += 1
-        if wfield[i - 1][j] == '*':
+        if wfield[i - 1][j] == "*":
             cnt += 1
-        if wfield[i - 1][j + 1] == '*':
+        if wfield[i - 1][j + 1] == "*":
             cnt += 1
-        if wfield[i][j - 1] == '*':
+        if wfield[i][j - 1] == "*":
             cnt += 1
-        if wfield[i][j + 1] == '*':
+        if wfield[i][j + 1] == "*":
             cnt += 1
-        if wfield[i + 1][j - 1] == '*':
+        if wfield[i + 1][j - 1] == "*":
             cnt += 1
-        if wfield[i + 1][j] == '*':
+        if wfield[i + 1][j] == "*":
             cnt += 1
-        if wfield[i + 1][j + 1] == '*':
+        if wfield[i + 1][j + 1] == "*":
             cnt += 1
         return cnt
 
@@ -62,13 +62,13 @@ rows, cols = [int(i) for i in input().split()]
 for i in range(rows):
     ifield.append(input())
 
-wfield.append('.' * (cols + 2))
+wfield.append("." * (cols + 2))
 for row in ifield:
-    wfield.append('.' + row + '.')
-wfield.append('.' * (cols + 2))
+    wfield.append("." + row + ".")
+wfield.append("." * (cols + 2))
 
 res = solver(wfield, rows, cols)
 for i in range(rows):
     for j in range(cols):
-        print(res[i][j], end='')
+        print(res[i][j], end="")
     print()
