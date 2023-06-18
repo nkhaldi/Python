@@ -34,7 +34,14 @@ class SuperAnnotateTests(unittest.TestCase):
             self.assertEqual(t2.caesar_encpypt(key, 2), tests[key])
 
     def test_task3(self):
-        graph = {"A": ["B", "C"], "B": ["C", "D"], "C": ["D"], "D": ["C"], "E": ["F"], "F": ["C"]}
+        graph = {
+            "A": ["B", "C"],
+            "B": ["C", "D"],
+            "C": ["D"],
+            "D": ["C"],
+            "E": ["F"],
+            "F": ["C"],
+        }
         self.assertEqual(t3.find_shortest_path(graph, "A", "B"), ["A", "B"])
         self.assertEqual(t3.find_shortest_path(graph, "A", "D"), ["A", "B", "D"])
         self.assertEqual(t3.find_shortest_path(graph, "F", "D"), ["F", "C", "D"])

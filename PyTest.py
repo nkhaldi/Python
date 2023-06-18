@@ -38,7 +38,14 @@ class TestFloatClass:
 
 class TestDictClass:
     # Has all numeric values
-    @pytest.mark.parametrize("dic", [{"a": 12, "b": 45}, {"a": 12, "b": "12"}, {"a": "12", "b": "ab"}])
+    @pytest.mark.parametrize(
+        "dic",
+        [
+            {"a": 12, "b": 45},
+            {"a": 12, "b": "12"},
+            {"a": "12", "b": "ab"},
+        ],
+    )
     def test_dic_one(self, dic):
         result = True
         for val in dic.values():

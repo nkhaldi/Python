@@ -23,7 +23,12 @@ IV, IX, XL, XC, CD и CM, соответственно.
 
 def get_num(inp, pos):
     num = int(inp)
-    dic = {0: ("M", "?", "?", "?"), 1: ("C", "CD", "D", "CM"), 2: ("X", "XL", "L", "XC"), 3: ("I", "IV", "V", "IX")}
+    dic = {
+        0: ("M", "?", "?", "?"),
+        1: ("C", "CD", "D", "CM"),
+        2: ("X", "XL", "L", "XC"),
+        3: ("I", "IV", "V", "IX"),
+    }
     one, four, five, nine = dic[pos]
     if num < 4:
         return one * num

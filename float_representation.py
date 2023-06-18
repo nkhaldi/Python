@@ -23,7 +23,8 @@ def float_to_bin_parts(number, bits=64):
     else:
         raise ValueError("bits argument must be 32 or 64")
 
-    bin_iter = iter(bin(struct.unpack(int_pack, struct.pack(float_pack, number))[0])[2:].rjust(bits, "0"))
+    value = bin(struct.unpack(int_pack, struct.pack(float_pack, number))[0])
+    bin_iter = iter(bin(value)[2:].rjust(bits, "0"))
     return ["".join(islice(bin_iter, x)) for x in (1, exponent_bits, mantissa_bits)]
 
 

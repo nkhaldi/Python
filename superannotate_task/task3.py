@@ -34,7 +34,14 @@ def find_shortest_path(graph, start, end):
 
 
 if __name__ == "__main__":
-    graph = {"A": ["B", "C"], "B": ["C", "D"], "C": ["D"], "D": ["C"], "E": ["F"], "F": ["C"]}
+    graph = {
+        "A": ["B", "C"],
+        "B": ["C", "D"],
+        "C": ["D"],
+        "D": ["C"],
+        "E": ["F"],
+        "F": ["C"],
+    }
 
     start, end = "A", "D"
     shortest_path = find_shortest_path(graph, start, end)
