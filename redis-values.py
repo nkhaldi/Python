@@ -1,3 +1,5 @@
+"""Get all values from Reis database."""
+
 import redis
 
 
