@@ -1,7 +1,7 @@
 import redis
 
 
-def try_decode(byte_data):
+def try_decode(byte_data: bytes):
     """Try to decode byte data, return hex representation if decode fails."""
     try:
         print(type(byte_data))
