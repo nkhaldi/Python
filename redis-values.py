@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     try:
         # Connect to Redis
-        r = redis.Redis(host="18.184.185.150", port=6380, db=1)
+        r = redis.Redis(host=redis_host, port=redis_port, db=redis_base)
 
         # Get all keys and create a dictionary to store key-value pairs
         keys = r.keys()
