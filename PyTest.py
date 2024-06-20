@@ -49,7 +49,7 @@ class TestDictClass:
     def test_dic_one(self, dic):
         result = True
         for val in dic.values():
-            if type(val) != int:
+            if type(val) is not int:
                 result = False
                 break
         try:
