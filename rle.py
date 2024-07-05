@@ -18,7 +18,7 @@ def encode_rle(inp):
     x = 1
     cnt = 1
     lst = list()
-    curr = inp[x : x + 1]
+    curr = inp[x : x + 1]  # noqa E203
 
     for ch in inp:
         if ch in curr:
@@ -30,7 +30,7 @@ def encode_rle(inp):
                 lst += [str(cnt) + str(ch)]
             cnt = 1
         x += 1
-        curr = inp[x : x + 1]
+        curr = inp[x : x + 1]  # noqa E203
     return "".join(lst)
 
 

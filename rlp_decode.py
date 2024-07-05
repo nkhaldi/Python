@@ -54,7 +54,7 @@ def rlpDecodeString(hexStr: str):
     elif 184 <= bsize <= 191:
         bsize -= 183
         for i in range(1, bsize + 1):
-            result += hexStr[2 * i : 2 * i + 2]
+            result += hexStr[2 * i : 2 * i + 2]  # noqa E203
         for i in range(len(hexStr) - 2, 2 * bsize + 1, -2):
             result += hexStr[i] + hexStr[i + 1]
     return result
@@ -73,7 +73,7 @@ def rlpDecodeArray(hexStr: str):
     elif bsize <= 255:
         bsize -= 247
         for i in range(1, bsize + 1):
-            result += hexStr[2 * i : 2 * i + 2]
+            result += hexStr[2 * i : 2 * i + 2]  # noqa E203
         i = 2 * bsize + 2
         while i < len(hexStr):
             el, isize = rlpDecodeArrayElement(hexStr[i:])
